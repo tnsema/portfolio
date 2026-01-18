@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Google Cybersecurity Certificate",
+    "issuer": "Google",
+    "status": "Earned",
+    "issued": "2024-08-01",
+    "expires": null,
+    "credentialId": null,
+    "verifyUrl": null,
+    "skills": [
+      "Security fundamentals",
+      "Security operations basics",
+      "Threat awareness",
+      "Documentation and reporting habits"
+    ],
+    "evidence": null,
+    "notes": "Foundational cybersecurity certificate focused on security concepts, operations, and documentation."
+  },
+  {
+    "name": "CCNA",
+    "issuer": "Cisco",
+    "status": "Studying",
+    "issued": null,
+    "expires": null,
+    "credentialId": null,
+    "verifyUrl": null,
+    "skills": [
+      "Networking fundamentals",
+      "Routing and switching basics",
+      "IP addressing and subnetting",
+      "Network troubleshooting concepts"
+    ],
+    "evidence": null,
+    "notes": "Currently studying toward CCNA certification."
+  }
+]

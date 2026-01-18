@@ -1,0 +1,48 @@
+[
+  {
+    "slug": "password-strength-analyzer",
+    "title": "Password Strength Analyzer",
+    "category": "Cybersecurity",
+    "status": "Completed",
+    "date": "2025-11-10",
+    "role": "Security / Development",
+    "summary": "Built a simple tool to evaluate password strength based on common security rules and best practices.",
+    "description": "Developed a password strength analyzer that checks user input against basic security criteria such as length, character variety, and common weakness patterns. The goal was to understand why weak passwords are dangerous and how basic validation can improve security awareness.",
+    "problem": "Many users create weak passwords without understanding what makes a password insecure. Applications often rely on minimal validation, leading to easily guessable or reusable passwords.",
+    "approach": [
+      "Researched common password weaknesses and attack patterns",
+      "Defined simple strength rules (length, uppercase, lowercase, numbers, symbols)",
+      "Implemented logic to score passwords based on these rules",
+      "Provided clear feedback explaining why a password is weak or strong",
+      "Tested the analyzer with common weak password examples"
+    ],
+    "outcome": "Created a functional password strength checker that helps demonstrate basic security principles and encourages stronger password creation.",
+    "highlights": [
+      "Rule-based password strength evaluation",
+      "Clear user feedback on password weaknesses",
+      "Security-focused thinking applied to a simple tool"
+    ],
+    "tech": [
+      "JavaScript",
+      "Basic security rules",
+      "Input validation",
+      "Logic and condition handling"
+    ],
+    "tags": [
+      "Passwords",
+      "Authentication",
+      "Security Basics",
+      "Input Validation"
+    ],
+    "images": {
+      "cover": "/projects/password-strength-analyzer/cover.webp",
+      "gallery": []
+    },
+    "links": {
+      "repo": null,
+      "demo": null,
+      "writeup": null
+    },
+    "notes": "This is a beginner security project focused on fundamentals rather than advanced cryptography or real-world password cracking."
+  }
+]

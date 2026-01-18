@@ -1,0 +1,237 @@
+[
+  {
+    "name": "ISC2 Candidate",
+    "issuer": "ISC2",
+    "status": "Active",
+    "issued": null,
+    "expires": "2026-06-30",
+    "type": "Professional Status",
+    "skills": [
+      "Security fundamentals awareness",
+      "Ethics and professional conduct"
+    ],
+    "verifyUrl": null,
+    "evidence": null,
+    "notes": "Indicates active participation in the ISC2 candidate program."
+  },
+  {
+    "name": "Introduction to Cybersecurity",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-05-01",
+    "expires": null,
+    "type": "Badge",
+    "skills": [
+      "Cybersecurity basics",
+      "Threat awareness",
+      "Security principles"
+    ],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "Cyber Threat Management",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-05-27",
+    "expires": null,
+    "type": "Badge",
+    "skills": [
+      "Threat analysis",
+      "Basic incident handling",
+      "Security monitoring concepts"
+    ],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "Ethical Hacker",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-05-27",
+    "expires": null,
+    "type": "Badge",
+    "skills": [
+      "Ethical hacking concepts",
+      "Attack awareness",
+      "Defensive thinking"
+    ],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "Network Defense",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-06-19",
+    "expires": null,
+    "type": "Badge",
+    "skills": [
+      "Network security basics",
+      "Defense concepts",
+      "Traffic awareness"
+    ],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "Endpoint Security",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-06-19",
+    "expires": null,
+    "type": "Badge",
+    "skills": [
+      "Endpoint protection concepts",
+      "Malware awareness",
+      "Device security basics"
+    ],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "Network Support and Security",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-06-19",
+    "expires": null,
+    "type": "Badge",
+    "skills": ["Network support basics", "Security troubleshooting mindset"],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "Networking Basics",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-05-27",
+    "expires": null,
+    "type": "Badge",
+    "skills": [
+      "Networking fundamentals",
+      "IP addressing",
+      "Basic routing concepts"
+    ],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "Operating Systems Basics",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-05-27",
+    "expires": null,
+    "type": "Badge",
+    "skills": [
+      "Operating system fundamentals",
+      "Process awareness",
+      "System concepts"
+    ],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "Computer Hardware Basics",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-05-08",
+    "expires": null,
+    "type": "Badge",
+    "skills": ["Hardware fundamentals", "Component awareness", "System basics"],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "English for IT 1",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-07-09",
+    "expires": null,
+    "type": "Badge",
+    "skills": ["Technical communication", "IT terminology"],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "English for IT 2",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-07-09",
+    "expires": null,
+    "type": "Badge",
+    "skills": ["Advanced technical communication", "Professional IT language"],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "Engaging Stakeholders for Success",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-07-03",
+    "expires": null,
+    "type": "Badge",
+    "skills": ["Stakeholder communication", "Professional collaboration"],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "Introduction to Data Science",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-06-26",
+    "expires": null,
+    "type": "Badge",
+    "skills": ["Data fundamentals", "Basic analytics concepts"],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "Introduction to IoT",
+    "issuer": "Cisco",
+    "status": "Completed",
+    "issued": "2024-06-26",
+    "expires": null,
+    "type": "Badge",
+    "skills": ["IoT concepts", "Connected systems awareness"],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "Enterprise Design Thinking Practitioner",
+    "issuer": "IBM",
+    "status": "Completed",
+    "issued": "2024-05-01",
+    "expires": null,
+    "type": "Badge",
+    "skills": [
+      "Design thinking basics",
+      "Problem framing",
+      "User-centered thinking"
+    ],
+    "verifyUrl": null,
+    "evidence": null
+  },
+  {
+    "name": "SOC Analyst Path",
+    "issuer": "TryHackMe",
+    "status": "Completed",
+    "issued": "2025-01-01",
+    "expires": null,
+    "type": "Learning Path",
+    "skills": ["Log analysis", "Basic triage", "Detection thinking"],
+    "verifyUrl": null,
+    "evidence": null,
+    "relatedProjects": ["SOC Lab: Log Analysis and Triage"]
+  },
+  {
+    "name": "Blue Team Level 1",
+    "issuer": "Blue Team Labs Online",
+    "status": "Studying",
+    "issued": null,
+    "expires": null,
+    "type": "Labs",
+    "skills": ["Incident response basics", "Investigation workflow"],
+    "verifyUrl": null,
+    "evidence": null
+  }
+]
