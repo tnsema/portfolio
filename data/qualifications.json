@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Diploma in Computer Science",
+    "institution": "Tshwane University of Technology",
+    "status": "Completed",
+    "startYear": 2022,
+    "endYear": 2024,
+    "focus": [
+      "Programming fundamentals",
+      "Object-oriented programming concepts",
+      "Data structures basics",
+      "Databases (relational concepts, SQL)",
+      "Operating systems fundamentals",
+      "Computer networks fundamentals",
+      "Software development lifecycle basics",
+      "System analysis and design fundamentals",
+      "Basic web development concepts",
+      "Problem-solving and algorithmic thinking"
+    ],
+    "notes": "Provided a strong foundation in computing and problem-solving."
+  },
+  {
+    "title": "Advanced Diploma in Computer Science",
+    "institution": "Tshwane University of Technology",
+    "status": "Studying",
+    "startYear": 2025,
+    "endYear": null,
+    "focus": [
+      "Advanced software development",
+      "Systems design",
+      "Applied computing"
+    ],
+    "notes": "Currently expanding depth in software and system-level concepts."
+  }
+]

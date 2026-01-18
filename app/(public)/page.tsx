@@ -1,10 +1,15 @@
-import { getProjects, getCertificates, getBadges } from "@/api/api";
+import {
+  getProjects,
+  getCertificates,
+  getBadges,
+  getQualifications,
+} from "@/api/api";
 
 export default async function Page() {
   const projects = await getProjects();
   const certificates = await getCertificates();
   const badges = await getBadges();
-
+  const qualifications = await getQualifications();
   return (
     <>
       {/* HERO */}
@@ -206,6 +211,90 @@ export default async function Page() {
         </div>
       </section>
 
+      {/* QUALIFICATIONS (Cream) */}
+      <section
+        id="qualifications"
+        className="min-h-screen flex items-center bg-[#F6F1E6]"
+      >
+        <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 w-full py-16">
+          <div className="text-center">
+            <h2 className="font-orbitron text-3xl sm:text-4xl font-bold">
+              Qualifications
+            </h2>
+            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-primary" />
+            <p className="mt-4 text-muted">
+              Formal education that built my foundation in computing.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            {qualifications.map((q: any) => (
+              <article
+                key={`${q.title}-${q.institution}-${q.status}`}
+                className="rounded-3xl border border-black/10 bg-white/70 backdrop-blur p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="font-orbitron text-xs tracking-[0.25em] text-primary">
+                      EDUCATION
+                    </p>
+
+                    <h3 className="mt-3 font-orbitron text-lg font-bold">
+                      {q.title}
+                    </h3>
+
+                    <p className="mt-2 text-sm text-muted">{q.institution}</p>
+
+                    <p className="mt-2 text-sm text-muted">
+                      {q.startYear ? `${q.startYear}` : "—"}
+                      {q.endYear
+                        ? ` • ${q.endYear}`
+                        : q.startYear
+                          ? " • Present"
+                          : ""}
+                    </p>
+                  </div>
+
+                  {q.status ? (
+                    <span
+                      className={`shrink-0 rounded-full border px-3 py-1 text-xs font-semibold ${
+                        String(q.status).toLowerCase() === "completed"
+                          ? "bg-emerald-100 text-emerald-900 border-emerald-200"
+                          : "bg-amber-100 text-amber-900 border-amber-200"
+                      }`}
+                    >
+                      {q.status}
+                    </span>
+                  ) : null}
+                </div>
+
+                {q.focus?.length ? (
+                  <div className="mt-6">
+                    <p className="text-sm font-semibold">Focus areas</p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {q.focus.slice(0, 8).map((f: string) => (
+                        <span
+                          key={f}
+                          className="rounded-full bg-[#F6F1E6] border border-black/10 px-3 py-1 text-xs text-muted"
+                        >
+                          {f}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+
+                {q.notes ? (
+                  <p className="mt-6 text-sm text-muted leading-relaxed">
+                    {q.notes}
+                  </p>
+                ) : null}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SKILLS (White) */}
       <section id="skills" className="min-h-screen flex items-center bg-white">
         <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 w-full py-16">
@@ -258,6 +347,18 @@ export default async function Page() {
                   "Awareness of data quality and bias",
                   "Using AI tools to support learning and productivity",
                   "Exploring responsible and secure use of AI",
+                ],
+              },
+              {
+                title: "Professional Skills",
+                items: [
+                  "Clear technical documentation",
+                  "Breaking problems into manageable steps",
+                  "Following structured processes",
+                  "Learning through labs and hands-on practice",
+                  "Asking the right technical questions",
+                  "Researching unfamiliar topics effectively",
+                  "Working with feedback and iteration",
                 ],
               },
             ].map((col) => (

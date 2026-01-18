@@ -3,6 +3,7 @@
 import projectsData from "@/data/projects.json";
 import certificatesData from "@/data/certificates.json";
 import badgesData from "@/data/badges.json";
+import qualificationsData from "@/data/qualifications.json";
 
 /* =======================
    Utils
@@ -42,4 +43,12 @@ export async function getCertificates() {
 ======================= */
 export async function getBadges() {
   return badgesData;
+}
+
+/* =======================
+   Qualifications
+   ======================= */
+
+export async function getQualifications() {
+  return qualificationsData;
 }
