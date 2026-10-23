@@ -20,10 +20,30 @@ function slugify(text) {
    Projects
 ======================= */
 export async function getProjects() {
-  return projectsData.map((p) => ({
-    ...p,
-    slug: p.slug ?? slugify(p.title), // IMPORTANT
-  }));
+  return projectsData.map((p) => {
+    const cover = p.visuals?.find((visual) => visual.type === "image")?.url;
+
+    return {
+      ...p,
+      slug: p.id ?? slugify(p.title),
+      shortDescription: p.tagline,
+      description: p.tagline,
+      problem: p.problemStatement?.painPoint,
+      approach: p.keyImplementations?.map(
+        (implementation) =>
+          `${implementation.title}: ${implementation.description}`,
+      ),
+      outcome: p.problemStatement?.solution,
+      tech: p.technologies?.map((technology) => technology.name),
+      tags: p.technologies?.map((technology) => technology.name),
+      images: cover ? { cover, gallery: [] } : undefined,
+      links: {
+        repo: p.links?.githubRepo,
+        demo: p.links?.liveDemo ?? p.links?.youtubeDemo,
+        writeup: p.links?.architectureDiagram,
+      },
+    };
+  });
 }
 
 export async function getProjectBySlug(slug) {

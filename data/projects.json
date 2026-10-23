@@ -1,48 +1,119 @@
 [
   {
-    "slug": "password-strength-analyzer",
+    "id": "password-strength-analyzer",
     "title": "Password Strength Analyzer",
-    "category": "Cybersecurity",
+    "tagline": "A browser-based tool that evaluates password strength using practical security rules and gives clear improvement guidance.",
     "status": "Completed",
-    "date": "2025-11-10",
-    "role": "Security / Development",
-    "summary": "Built a simple tool to evaluate password strength based on common security rules and best practices.",
-    "description": "Developed a password strength analyzer that checks user input against basic security criteria such as length, character variety, and common weakness patterns. The goal was to understand why weak passwords are dangerous and how basic validation can improve security awareness.",
-    "problem": "Many users create weak passwords without understanding what makes a password insecure. Applications often rely on minimal validation, leading to easily guessable or reusable passwords.",
-    "approach": [
-      "Researched common password weaknesses and attack patterns",
-      "Defined simple strength rules (length, uppercase, lowercase, numbers, symbols)",
-      "Implemented logic to score passwords based on these rules",
-      "Provided clear feedback explaining why a password is weak or strong",
-      "Tested the analyzer with common weak password examples"
+    "featured": true,
+    "links": { "liveDemo": null, "githubRepo": null, "youtubeDemo": null, "architectureDiagram": null },
+    "technologies": [
+      { "name": "JavaScript", "category": "Frontend" },
+      { "name": "Input validation", "category": "Security" },
+      { "name": "Rule-based scoring", "category": "Logic" }
     ],
-    "outcome": "Created a functional password strength checker that helps demonstrate basic security principles and encourages stronger password creation.",
-    "highlights": [
-      "Rule-based password strength evaluation",
-      "Clear user feedback on password weaknesses",
-      "Security-focused thinking applied to a simple tool"
-    ],
-    "tech": [
-      "JavaScript",
-      "Basic security rules",
-      "Input validation",
-      "Logic and condition handling"
-    ],
-    "tags": [
-      "Passwords",
-      "Authentication",
-      "Security Basics",
-      "Input Validation"
-    ],
-    "images": {
-      "cover": "/projects/password-strength-analyzer/cover.webp",
-      "gallery": []
+    "problemStatement": {
+      "context": "Many users create passwords without understanding the characteristics that make them resistant to common attacks.",
+      "painPoint": "Minimal or unclear password validation can leave users with easily guessable or reusable passwords.",
+      "solution": "The tool checks password length, character variety, and common weakness patterns, then provides understandable feedback on how to improve the password."
     },
-    "links": {
-      "repo": null,
-      "demo": null,
-      "writeup": null
+    "architecture": {
+      "summary": "A lightweight client-side JavaScript application that accepts a password, applies defined strength rules, and returns a score with feedback.",
+      "components": [
+        { "layer": "User interface", "description": "Captures password input and presents strength feedback clearly." },
+        { "layer": "Validation logic", "description": "Evaluates length, uppercase and lowercase letters, numbers, symbols, and common weakness patterns." }
+      ]
     },
-    "notes": "This is a beginner security project focused on fundamentals rather than advanced cryptography or real-world password cracking."
+    "keyImplementations": [
+      { "title": "Rule-based strength evaluation", "description": "Scores passwords against practical length and character-variety criteria." },
+      { "title": "Clear feedback", "description": "Explains why a password is weak or strong so users can make an informed improvement." },
+      { "title": "Security-focused validation", "description": "Applies core security principles to a focused, easy-to-use tool." }
+    ],
+    "securityDecisions": [
+      { "title": "Transparent scoring", "decision": "Uses understandable rules and avoids presenting the score as a complete security guarantee." }
+    ],
+    "technicalChallenges": [
+      { "challenge": "Making password-strength rules useful and understandable without overstating their ability to measure real-world password security.", "solution": "Used transparent, rule-based checks and clear feedback.", "outcome": "Created a functional learning tool that demonstrates core password-security principles." }
+    ],
+    "resilienceTesting": [],
+    "visuals": [
+      { "type": "image", "caption": "Password Strength Analyzer interface", "url": "/projects/password-strength-analyzer/cover.webp" }
+    ],
+    "takeaways": {
+      "learnings": ["How password length and character variety influence baseline password strength.", "How clear validation feedback can support better security decisions."],
+      "futureRoadmap": ["Add a password-manager recommendation and guidance on unique passwords.", "Include an explanation of why rule-based scoring has limits."]
+    }
+  },
+  {
+    "id": "secure-aws-linux-web-server",
+    "title": "Secure AWS Linux Web Server",
+    "tagline": "A hardened AWS EC2 Linux web server deployment focused on secure access, encrypted storage, service resilience, troubleshooting, and operational recovery.",
+    "status": "Completed",
+    "featured": true,
+    "links": { "liveDemo": null, "githubRepo": "https://github.com/tnsema/secure-aws-linux-web-server", "youtubeDemo": null, "architectureDiagram": null },
+    "technologies": [
+      { "name": "AWS", "category": "Cloud" },
+      { "name": "Amazon EC2", "category": "Compute" },
+      { "name": "Amazon EBS", "category": "Storage" },
+      { "name": "AWS Security Groups", "category": "Networking & Security" },
+      { "name": "Ubuntu Linux", "category": "Operating System" },
+      { "name": "Nginx", "category": "Web Server" },
+      { "name": "SSH", "category": "Remote Administration" },
+      { "name": "GitHub", "category": "Version Control" }
+    ],
+    "problemStatement": {
+      "context": "Deploying a public web server in the cloud involves more than launching a virtual machine. Administrative access, network exposure, storage security, service availability, monitoring, and recovery all need to be considered.",
+      "painPoint": "A poorly configured EC2 instance can expose administrative services to the internet, leave storage unprotected, and provide little guidance for diagnosing or recovering from service failures.",
+      "solution": "Deployed an Ubuntu-based Nginx web server on Amazon EC2 with restricted SSH access, encrypted EBS storage, controlled Security Group rules, service persistence, log inspection, deliberate failure testing, and a documented recovery runbook."
+    },
+    "architecture": {
+      "summary": "A public Nginx web server runs on an Ubuntu EC2 instance protected by an AWS Security Group. HTTP traffic is publicly permitted on TCP port 80, while SSH administration on TCP port 22 is restricted to the administrator's public IP using a /32 CIDR rule.",
+      "components": [
+        { "layer": "Public Access", "description": "Internet clients access the Nginx status page over HTTP TCP/80." },
+        { "layer": "Network Security", "description": "An AWS Security Group allows public HTTP traffic while restricting SSH TCP/22 to a single administrator public IP using /32." },
+        { "layer": "Compute", "description": "Amazon EC2 t3.micro instance running Ubuntu Server 26.04 LTS." },
+        { "layer": "Web Service", "description": "Nginx serves a custom operational status page and is managed through systemd." },
+        { "layer": "Storage", "description": "The EC2 root filesystem uses an encrypted 8 GiB gp3 Amazon EBS volume." },
+        { "layer": "Administration", "description": "Remote server administration is performed using SSH key-based authentication from an authorized workstation." }
+      ]
+    },
+    "keyImplementations": [
+      { "title": "Restricted SSH Access", "description": "Restricted TCP port 22 to the administrator's public IP using a /32 Security Group rule instead of exposing SSH to the entire internet." },
+      { "title": "Encrypted EBS Storage", "description": "Enabled encryption for the EC2 root EBS volume to protect stored data at rest." },
+      { "title": "Key-Based Authentication", "description": "Used an EC2 SSH key pair for remote Linux administration instead of password-based SSH access." },
+      { "title": "Nginx Service Persistence", "description": "Configured and verified Nginx to start automatically after an EC2 operating system reboot." },
+      { "title": "Operational Logging", "description": "Inspected Nginx access and error logs to understand HTTP activity and support incident diagnosis." },
+      { "title": "Break-Fix Validation", "description": "Deliberately introduced service and network failures, diagnosed each failure at the appropriate layer, and restored normal operation." },
+      { "title": "Recovery Runbook", "description": "Documented a repeatable troubleshooting process covering EC2 state, Security Groups, SSH access, service status, logs, remediation, and validation." }
+    ],
+    "securityDecisions": [
+      { "title": "Root Account Protection", "decision": "Enabled MFA on the AWS root account and treated the root identity as an account-level identity rather than a routine operational login." },
+      { "title": "Least Network Exposure", "decision": "Exposed HTTP publicly because the web service requires internet access, while restricting administrative SSH access to a single trusted public IP." },
+      { "title": "Private Key Protection", "decision": "Kept the EC2 private SSH key outside source control and restricted its local Windows filesystem permissions." },
+      { "title": "Encryption at Rest", "decision": "Enabled encryption on the EC2 root EBS volume." },
+      { "title": "No Credentials in Git", "decision": "Added private-key and environment-file patterns to .gitignore and excluded credentials and sensitive configuration from the public repository." }
+    ],
+    "technicalChallenges": [
+      { "challenge": "Windows OpenSSH rejected the downloaded EC2 private key because its filesystem permissions were too permissive.", "solution": "Reviewed the SSH error and modified the Windows ACL so that only the current user retained the required access to the private key.", "outcome": "SSH key authentication succeeded while maintaining appropriate protection of the private key." },
+      { "challenge": "The public website became unavailable after Nginx was deliberately stopped.", "solution": "Tested localhost connectivity with curl, inspected the Nginx service using systemctl, identified the inactive service, and restarted it.", "outcome": "Public HTTP access was restored and the failure was confirmed to exist at the service layer rather than the AWS network layer." },
+      { "challenge": "The public website timed out after the HTTP Security Group rule was deliberately removed even though Nginx was still running.", "solution": "Verified that curl against localhost still returned a successful response, isolated the problem to network access, and restored the TCP/80 inbound rule.", "outcome": "Public access returned, demonstrating the difference between an application/service failure and a network firewall failure." },
+      { "challenge": "The original implementation plan assumed a dedicated IAM administrator user for routine human access, while the current AWS account experience recommended a newer team-oriented human access model.", "solution": "Reviewed the guidance presented by AWS and avoided creating unnecessary long-term access keys or credentials solely to satisfy the original implementation plan.", "outcome": "The project reinforced the importance of validating architecture decisions against the current cloud environment rather than blindly following an outdated plan." }
+    ],
+    "resilienceTesting": [
+      { "test": "Nginx Service Failure", "method": "Stopped the Nginx service intentionally using systemctl.", "observation": "The public browser request returned ERR_CONNECTION_REFUSED and localhost HTTP verification failed.", "recovery": "Restarted Nginx and verified both local and external HTTP connectivity." },
+      { "test": "Security Group Failure", "method": "Temporarily removed the HTTP TCP/80 inbound Security Group rule.", "observation": "External requests timed out while localhost continued returning a successful HTTP response.", "recovery": "Restored the TCP/80 inbound rule and confirmed public connectivity." },
+      { "test": "EC2 Reboot", "method": "Rebooted the EC2 instance after confirming Nginx was enabled through systemd.", "observation": "SSH temporarily disconnected during the reboot as expected.", "recovery": "After EC2 returned online, Nginx started automatically and the public status page became available without manually starting the service." }
+    ],
+    "visuals": [
+      { "type": "image", "caption": "Amazon EC2 instance configuration and running state", "url": null },
+      { "type": "diagram", "caption": "Secure AWS Linux Web Server architecture", "url": null },
+      { "type": "image", "caption": "AWS Security Group showing restricted SSH and public HTTP access", "url": null },
+      { "type": "image", "caption": "Encrypted Amazon EBS root volume", "url": null },
+      { "type": "image", "caption": "Public Nginx operational status page", "url": null },
+      { "type": "image", "caption": "Deliberate service and network failure testing", "url": null }
+    ],
+    "takeaways": {
+      "learnings": ["Provisioned and administered an Ubuntu Linux workload on Amazon EC2.", "Applied Security Group rules based on the different trust requirements of public HTTP and administrative SSH traffic.", "Strengthened SSH security using key-based authentication, restricted network access, and local private-key permissions.", "Used systemd to inspect, restart, and persist Linux services.", "Used Nginx access and error logs as part of operational troubleshooting.", "Learned to distinguish service failures from network-layer failures using curl, systemctl, browser behaviour, and Security Group inspection.", "Validated service recovery and persistence instead of assuming the configuration worked.", "Documented an operational recovery procedure that can be followed during an outage."],
+      "futureRoadmap": ["Add HTTPS using TLS instead of serving the public page over HTTP only.", "Add Amazon CloudWatch monitoring, metrics, and alarms.", "Automate infrastructure provisioning using Terraform.", "Introduce configuration automation instead of manually provisioning Nginx.", "Add CI/CD for controlled deployment of web content.", "Evaluate AWS Systems Manager Session Manager as an alternative to exposing SSH access.", "Extend the project with centralized logging and automated incident alerts."]
+    }
   }
 ]

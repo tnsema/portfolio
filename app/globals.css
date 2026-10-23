@@ -63,6 +63,24 @@ body {
   font-family: var(--font-body);
 }
 
+/* Lets the hero portrait fade into the section itself, rather than a white box. */
+.hero-photo {
+  -webkit-mask-image: radial-gradient(
+    ellipse at 55% 46%,
+    #000 0%,
+    #000 28%,
+    rgba(0, 0, 0, 0.52) 46%,
+    transparent 72%
+  );
+  mask-image: radial-gradient(
+    ellipse at 55% 46%,
+    #000 0%,
+    #000 28%,
+    rgba(0, 0, 0, 0.52) 46%,
+    transparent 72%
+  );
+}
+
 /* =========================
    TYPOGRAPHY
    ========================= */

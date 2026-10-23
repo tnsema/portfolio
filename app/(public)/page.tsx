@@ -4,6 +4,7 @@ import {
   getBadges,
   getQualifications,
 } from "@/api/api";
+import { FolderKanban, Github, Linkedin, Mail } from "lucide-react";
 
 export default async function Page() {
   const projects = await getProjects();
@@ -11,11 +12,11 @@ export default async function Page() {
   const badges = await getBadges();
   const qualifications = await getQualifications();
   return (
-    <>
+    <div className="flex flex-col">
       {/* HERO */}
       <section
         id="top"
-        className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#F6F1E6] via-white to-white"
+        className="order-1 relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#F6F1E6] via-white to-white"
       >
         {/* Subtle grain */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.07] mix-blend-multiply hero-grain" />
@@ -48,53 +49,52 @@ export default async function Page() {
               </div>
 
               <h2 className="mt-6 text-lg sm:text-xl md:text-2xl text-muted animate-fade-up-delay2">
-                Cybersecurity • Software Engineering • AI (Exploring)
+                Software · Cloud · Cyber
               </h2>
-
-              <p className="mt-6 max-w-xl text-base sm:text-lg md:text-xl leading-relaxed text-muted mx-auto md:mx-0 animate-fade-up-delay3">
-                I focus on cybersecurity and build practical projects that show
-                real skills. I use development knowledge to understand and
-                secure systems end-to-end.
-              </p>
 
               {/* CTA row */}
               <div className="mt-10 flex flex-wrap gap-3 justify-center md:justify-start animate-fade-up-delay3">
                 <a
                   href="#projects"
-                  className="group rounded-2xl bg-primary px-7 py-3 font-semibold text-black transition-all hover:-translate-y-0.5 hover:shadow-2xl"
+                  aria-label="View projects"
+                  title="View projects"
+                  className="group inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-primary px-6 font-semibold text-black transition-all hover:-translate-y-0.5 hover:shadow-2xl"
                 >
-                  <span className="inline-flex items-center gap-2">
-                    View Projects
-                    <span className="transition-transform group-hover:translate-x-0.5">
-                      →
-                    </span>
-                  </span>
+                  <FolderKanban size={21} aria-hidden="true" />
+                  <span>View Projects</span>
                 </a>
 
                 <a
                   href="#contact"
-                  className="rounded-2xl border border-black/10 bg-white/70 backdrop-blur px-7 py-3 font-semibold transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                  aria-label="Contact Thobile"
+                  title="Contact"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-black/10 bg-white/70 backdrop-blur transition-all hover:-translate-y-0.5 hover:shadow-xl"
                 >
-                  Contact
+                  <Mail size={21} aria-hidden="true" />
                 </a>
 
                 <a
                   href="https://github.com/tnsema"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-2xl border border-black/10 bg-white/70 backdrop-blur px-7 py-3 font-semibold transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                  aria-label="GitHub profile"
+                  title="GitHub"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-black/10 bg-white/70 backdrop-blur transition-all hover:-translate-y-0.5 hover:shadow-xl"
                 >
-                  GitHub
+                  <Github size={21} aria-hidden="true" />
                 </a>
 
                 <a
                   href="https://www.linkedin.com/in/tnsema/"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-2xl border border-black/10 bg-white/70 backdrop-blur px-7 py-3 font-semibold transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                  aria-label="LinkedIn profile"
+                  title="LinkedIn"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-black/10 bg-white/70 backdrop-blur transition-all hover:-translate-y-0.5 hover:shadow-xl"
                 >
-                  LinkedIn
+                  <Linkedin size={21} aria-hidden="true" />
                 </a>
+
               </div>
 
               <div className="mt-7 flex items-center justify-center md:justify-start gap-2 text-sm text-muted animate-fade-up-delay4">
@@ -117,11 +117,11 @@ export default async function Page() {
               <img
                 src="/b&w.jpg"
                 alt=""
-                className="pointer-events-none absolute right-[-6%] top-1/2 -translate-y-1/2 w-[560px] max-w-none grayscale opacity-25 hero-photo"
+                className="pointer-events-none absolute right-[-6%] top-1/2 -translate-y-1/2 w-[560px] max-w-none grayscale opacity-45 hero-photo"
               />
 
-              {/* Fade mask */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#F6F1E6] via-[#F6F1E6]/55 to-transparent" />
+              {/* Dark core over a masked image; transparent edges reveal the hero. */}
+              <div className="pointer-events-none absolute right-[-6%] top-1/2 h-[562px] w-[560px] max-w-none -translate-y-1/2 hero-photo bg-[radial-gradient(circle_at_center,rgba(73,48,20,0.15)_0%,rgba(73,48,20,0.05)_35%,transparent_72%)]" />
             </div>
           </div>
         </div>
@@ -130,7 +130,7 @@ export default async function Page() {
       {/* ABOUT (Cream) */}
       <section
         id="about"
-        className="min-h-screen flex items-center bg-[#F6F1E6]"
+        className="order-2 min-h-screen flex items-center bg-gradient-to-b from-white to-[#F6F1E6]"
       >
         <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 w-full py-16">
           <div className="text-center">
@@ -214,7 +214,7 @@ export default async function Page() {
       {/* QUALIFICATIONS (Cream) */}
       <section
         id="qualifications"
-        className="min-h-screen flex items-center bg-[#F6F1E6]"
+        className="order-5 min-h-screen flex items-center bg-gradient-to-b from-white to-[#F6F1E6]"
       >
         <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 w-full py-16">
           <div className="text-center">
@@ -296,7 +296,7 @@ export default async function Page() {
       </section>
 
       {/* SKILLS (White) */}
-      <section id="skills" className="min-h-screen flex items-center bg-white">
+      <section id="skills" className="order-4 min-h-screen flex items-center bg-gradient-to-b from-white to-[#F6F1E6]">
         <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 w-full py-16">
           <div className="text-center">
             <h2 className="font-orbitron text-3xl sm:text-4xl font-bold">
@@ -386,7 +386,7 @@ export default async function Page() {
       {/* PROJECTS (Cream) */}
       <section
         id="projects"
-        className="min-h-screen flex items-center bg-[#F6F1E6]"
+        className="order-3 min-h-screen flex items-center bg-gradient-to-b from-white to-[#F6F1E6]"
       >
         <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 w-full py-16">
           <div className="text-center">
@@ -484,7 +484,7 @@ export default async function Page() {
       {/* CERTIFICATIONS (White) */}
       <section
         id="certifications"
-        className="min-h-screen flex items-center bg-white"
+        className="order-6 min-h-screen flex items-center bg-gradient-to-b from-white to-[#F6F1E6]"
       >
         <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 w-full py-16">
           <div className="text-center">
@@ -597,7 +597,7 @@ export default async function Page() {
       {/* BADGES (Cream) */}
       <section
         id="badges"
-        className="min-h-screen flex items-center bg-[#F6F1E6]"
+        className="order-7 min-h-screen flex items-center bg-gradient-to-b from-white to-[#F6F1E6]"
       >
         <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 w-full py-16">
           <div className="text-center">
@@ -660,7 +660,7 @@ export default async function Page() {
       </section>
 
       {/* CONTACT (White) */}
-      <section id="contact" className="min-h-screen flex items-center bg-white">
+      <section id="contact" className="order-8 min-h-screen flex items-center bg-gradient-to-b from-white to-[#F6F1E6]">
         <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 w-full py-16">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-orbitron text-3xl sm:text-4xl font-bold">
@@ -725,6 +725,6 @@ export default async function Page() {
           </p>
         </div>
       </section>
-    </>
+    </div>
   );
 }

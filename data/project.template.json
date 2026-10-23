@@ -1,0 +1,46 @@
+{
+  "id": "project-id",
+  "title": "Project title",
+  "tagline": "A one-sentence description of the project.",
+  "status": "Completed",
+  "featured": false,
+  "links": {
+    "liveDemo": null,
+    "githubRepo": null,
+    "youtubeDemo": null,
+    "architectureDiagram": null
+  },
+  "technologies": [
+    { "name": "Technology name", "category": "Technology category" }
+  ],
+  "problemStatement": {
+    "context": "The situation or user need.",
+    "painPoint": "The problem to solve.",
+    "solution": "How the project addresses it."
+  },
+  "architecture": {
+    "summary": "A short description of the system design.",
+    "components": [
+      { "layer": "Component name", "description": "What it does." }
+    ]
+  },
+  "keyImplementations": [
+    { "title": "Implementation name", "description": "What was implemented and why." }
+  ],
+  "securityDecisions": [
+    { "title": "Security decision", "decision": "The rationale for it." }
+  ],
+  "technicalChallenges": [
+    { "challenge": "Technical challenge.", "solution": "How it was resolved.", "outcome": "Verified result." }
+  ],
+  "resilienceTesting": [
+    { "test": "Test name", "method": "How it was tested.", "observation": "What happened.", "recovery": "How service was restored." }
+  ],
+  "visuals": [
+    { "type": "image", "caption": "What this visual shows.", "url": null }
+  ],
+  "takeaways": {
+    "learnings": ["What you learned."],
+    "futureRoadmap": ["A possible next improvement."]
+  }
+}
