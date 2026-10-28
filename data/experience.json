@@ -1,0 +1,38 @@
+[
+  {
+    "role": "Software Engineer",
+    "company": "Samddra",
+    "start": "Sep 2026",
+    "end": "Present",
+    "highlights": [
+      "Develop and maintain the SAMDDRA membership platform, including membership, certification, finance, and resource-management functionality.",
+      "Support deployment and infrastructure planning for containerized workloads using Docker and Linux-based hosting.",
+      "Configure and troubleshoot domains, DNS, application services, and production environments.",
+      "Maintain deployment workflows with Git and GitHub Actions, and investigate issues through logs, testing, and root-cause analysis."
+    ]
+  },
+  {
+    "role": "Software Developer",
+    "company": "4levels Solutions",
+    "start": "May 2024",
+    "end": "May 2026",
+    "highlights": [
+      "Managed IaaS hosting and cPanel environments, including deployments, domains, databases, user accounts, email services, and hosting security settings.",
+      "Contributed to ABii, a learning-management system, using Java, Spring Boot, Thymeleaf, PostgreSQL, and Docker.",
+      "Developed features for EasyOnRamp using Node.js, Express.js, TypeScript, and Next.js; and enhanced the Samddra platform using PHP and CodeIgniter 4.",
+      "Performed functional, usability, performance, and stability testing; documented defects and collaborated on improvements."
+    ]
+  },
+  {
+    "role": "IT Support & Systems Technician",
+    "company": "Area Group",
+    "employmentType": "Freelance",
+    "start": null,
+    "end": null,
+    "highlights": [
+      "Provided technical support across websites, hosting environments, end-user devices, and business systems.",
+      "Configured and maintained domains, DNS records, email accounts, and website-hosting services.",
+      "Diagnosed and resolved hardware, software, hosting, email-delivery, and network-connectivity issues."
+    ]
+  }
+]

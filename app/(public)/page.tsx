@@ -3,14 +3,21 @@ import {
   getCertificates,
   getBadges,
   getQualifications,
+  getExperience,
 } from "@/api/api";
-import { FolderKanban, Github, Linkedin, Mail } from "lucide-react";
+import { Award, Briefcase, FolderKanban, Github, Linkedin, Mail } from "lucide-react";
 
 export default async function Page() {
   const projects = await getProjects();
   const certificates = await getCertificates();
   const badges = await getBadges();
   const qualifications = await getQualifications();
+  const experience = await getExperience();
+  const qualificationsByLatest = [...qualifications].sort((a: any, b: any) => {
+    const aYear = a.endYear ?? a.startYear ?? 0;
+    const bYear = b.endYear ?? b.startYear ?? 0;
+    return bYear - aYear;
+  });
   return (
     <div className="flex flex-col">
       {/* HERO */}
@@ -211,6 +218,74 @@ export default async function Page() {
         </div>
       </section>
 
+      {/* EXPERIENCE */}
+      <section
+        id="experience"
+        className="order-3 min-h-screen flex items-center bg-gradient-to-b from-[#F6F1E6] to-white"
+      >
+        <div className="mx-auto max-w-7xl px-6 py-16 md:px-8 lg:px-12 w-full">
+          <div className="text-center">
+            <h2 className="font-orbitron text-3xl font-bold sm:text-4xl">
+              Experience
+            </h2>
+            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-primary" />
+            <p className="mt-4 text-muted">
+              Professional experience across software development, cloud, and infrastructure support.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-12 max-w-5xl">
+            {experience.map((job: any, index: number) => (
+              <div key={`${job.role}-${job.company}`}>
+                <article className="rounded-3xl border border-black/10 bg-white/80 p-8 shadow-sm backdrop-blur transition-all hover:-translate-y-1 hover:shadow-xl">
+                  <div className="flex items-start justify-between gap-5">
+                    <div className="flex min-w-0 items-start gap-4">
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary/15 text-primary">
+                        <Briefcase size={21} aria-hidden="true" />
+                      </span>
+                      <div>
+                        <p className="font-orbitron text-xs tracking-[0.22em] text-primary">
+                          EXPERIENCE
+                        </p>
+                        <h3 className="mt-2 font-orbitron text-lg font-bold">
+                          {job.role}
+                        </h3>
+                        <p className="mt-1 text-sm text-muted">
+                          {job.company}
+                          {job.employmentType ? ` • ${job.employmentType}` : ""}
+                        </p>
+                      </div>
+                    </div>
+                    {job.start || job.end ? (
+                      <span className="shrink-0 rounded-full border border-black/10 bg-[#F6F1E6] px-3 py-1 text-xs font-semibold text-muted">
+                        {job.start ?? ""}{job.start && job.end ? " - " : ""}{job.end ?? ""}
+                      </span>
+                    ) : null}
+                  </div>
+
+                  <ul className="mt-6 space-y-3 text-sm leading-relaxed text-muted">
+                    {job.highlights.map((highlight: string) => (
+                      <li key={highlight} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+
+                {index < experience.length - 1 ? (
+                  <div className="flex h-14 flex-col items-center justify-center" aria-hidden="true">
+                    <span className="h-4 w-px bg-primary/40" />
+                    <span className="h-3 w-3 rounded-full border-2 border-[#F6F1E6] bg-primary shadow-sm" />
+                    <span className="h-4 w-px bg-primary/40" />
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* QUALIFICATIONS (Cream) */}
       <section
         id="qualifications"
@@ -227,12 +302,16 @@ export default async function Page() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {qualifications.map((q: any) => (
-              <article
+          <div className="mx-auto mt-12 max-w-5xl">
+            <div>
+            {qualificationsByLatest.map((q: any, index: number) => (
+              <div
                 key={`${q.title}-${q.institution}-${q.status}`}
-                className="rounded-3xl border border-black/10 bg-white/70 backdrop-blur p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                className="relative"
               >
+                <article
+                  className="rounded-3xl border border-black/10 bg-white/80 p-8 shadow-sm backdrop-blur transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="font-orbitron text-xs tracking-[0.25em] text-primary">
@@ -289,8 +368,44 @@ export default async function Page() {
                     {q.notes}
                   </p>
                 ) : null}
-              </article>
+                {q.awards?.length ? (
+                  <div className="mt-7 border-t border-black/10 pt-6">
+                    <p className="font-orbitron text-xs tracking-[0.2em] text-primary">
+                      AWARDS DURING THIS DIPLOMA
+                    </p>
+                    <div className="mt-4 space-y-4">
+                      {[...q.awards]
+                        .sort((a: any, b: any) => b.year - a.year)
+                        .map((award: any, awardIndex: number) => (
+                        <div key={`${award.title}-${award.year}`} className="relative pl-9">
+                          {awardIndex < q.awards.length - 1 ? (
+                            <span className="absolute left-[13px] top-7 h-8 w-px bg-primary/30" />
+                          ) : null}
+                          <span className="absolute left-0 top-1 flex h-7 w-7 items-center justify-center rounded-lg border border-black/10 bg-[#F6F1E6] text-primary">
+                            <Award size={15} aria-hidden="true" />
+                          </span>
+                          <div className="rounded-2xl border border-black/10 bg-[#F6F1E6]/60 px-4 py-3">
+                            <p className="font-semibold">{award.title}</p>
+                            <p className="mt-1 text-sm text-muted">
+                              {q.institution} <span className="mx-1">•</span> {award.year}
+                            </p>
+                          </div>
+                        </div>
+                        ))}
+                    </div>
+                  </div>
+                ) : null}
+                </article>
+                {index < qualifications.length - 1 ? (
+                  <div className="flex h-14 flex-col items-center justify-center" aria-hidden="true">
+                    <span className="h-4 w-px bg-primary/40" />
+                    <span className="h-3 w-3 rounded-full border-2 border-[#F6F1E6] bg-primary shadow-sm" />
+                    <span className="h-4 w-px bg-primary/40" />
+                  </div>
+                ) : null}
+              </div>
             ))}
+            </div>
           </div>
         </div>
       </section>
@@ -405,8 +520,14 @@ export default async function Page() {
                 key={p.slug}
                 className="group rounded-3xl border border-black/10 bg-white/70 backdrop-blur overflow-hidden shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="h-36 bg-gradient-to-br from-white to-[#F6F1E6] border-b border-black/10 relative">
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-primary/10" />
+                <div className="h-36 overflow-hidden border-b border-black/10 relative bg-black">
+                  <img
+                    src="/project-card-cover.png"
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-transparent" />
+                  <div className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100 bg-primary/10" />
                   <div className="absolute bottom-4 left-6">
                     <p className="font-orbitron text-xs tracking-[0.25em] text-primary">
                       PROJECT

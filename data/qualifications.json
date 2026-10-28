@@ -17,7 +17,17 @@
       "Basic web development concepts",
       "Problem-solving and algorithmic thinking"
     ],
-    "notes": "Provided a strong foundation in computing and problem-solving."
+    "notes": "Provided a strong foundation in computing and problem-solving.",
+    "awards": [
+      {
+        "title": "Best First-Year Student Achiever",
+        "year": 2022
+      },
+      {
+        "title": "Best Second-Year Student Achiever",
+        "year": 2023
+      }
+    ]
   },
   {
     "title": "Advanced Diploma in Computer Science",

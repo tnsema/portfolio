@@ -24,11 +24,6 @@ const SITE_URL = "https://portfolio.thosem.com";
 const SITE_KEYWORDS =
   "Thobile, portfolio, cybersecurity, software engineering, projects, skills, contact";
 
-// Put these files in /public:
-// - /public/og.png  (1200x630 recommended)
-// - /public/favicon.ico
-// - /public/icon.png (512x512 recommended)
-// - /public/apple-icon.png (180x180 recommended)
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
@@ -61,10 +56,16 @@ export const metadata: Metadata = {
   // Helps Chrome/Android address bar color etc.
   themeColor: "#9C7627",
 
+  manifest: "/favicon/site.webmanifest",
+
   // Icons for browsers + mobile
   icons: {
-    icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
-    apple: [{ url: "/apple-icon.png" }],
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+    ],
+    apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
   },
 
   openGraph: {

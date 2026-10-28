@@ -1,6 +1,7 @@
 import { getCertificates } from "@/api/api";
 
 function formatDate(input: string | null) {
+  if (/^\d{4}$/.test(input ?? "")) return input;
   if (!input) return "—";
   const d = new Date(input);
   if (Number.isNaN(d.getTime())) return input;

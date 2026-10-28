@@ -1,6 +1,7 @@
 [
   {
     "name": "Google Cybersecurity Certificate",
+    "importance": 2,
     "issuer": "Google",
     "status": "Earned",
     "issued": "2024-08-01",
@@ -17,20 +18,55 @@
     "notes": "Foundational cybersecurity certificate focused on security concepts, operations, and documentation."
   },
   {
-    "name": "CCNA",
-    "issuer": "Cisco",
-    "status": "Studying",
+    "name": "AWS Certified Cloud Practitioner (CLF-C02)",
+    "importance": 1,
+    "issuer": "Amazon Web Services",
+    "status": "Earned",
+    "issued": "2026",
+    "expires": null,
+    "credentialId": null,
+    "verifyUrl": null,
+    "skills": ["AWS Cloud concepts", "Core AWS services", "Cloud security and compliance", "AWS pricing and support"],
+    "evidence": null,
+    "notes": "AWS foundational cloud certification."
+  },
+  {
+    "name": "AWS re/Start Graduate",
+    "importance": 3,
+    "issuer": "AWS / Praesignis",
+    "status": "Earned",
+    "issued": "2026",
+    "expires": null,
+    "credentialId": null,
+    "verifyUrl": null,
+    "skills": ["Cloud computing", "Linux", "Networking", "Career readiness"],
+    "evidence": null,
+    "notes": "AWS re/Start graduate programme."
+  },
+  {
+    "name": "AWS SimuLearn: Cloud Computing Essentials",
+    "importance": 4,
+    "issuer": "Amazon Web Services",
+    "status": "Earned",
     "issued": null,
     "expires": null,
     "credentialId": null,
     "verifyUrl": null,
-    "skills": [
-      "Networking fundamentals",
-      "Routing and switching basics",
-      "IP addressing and subnetting",
-      "Network troubleshooting concepts"
-    ],
+    "skills": ["Cloud computing fundamentals", "AWS services", "Cloud architecture basics"],
     "evidence": null,
-    "notes": "Currently studying toward CCNA certification."
+    "notes": "Interactive AWS cloud computing essentials learning experience."
+  },
+  {
+    "name": "Introduction to Cybersecurity",
+    "importance": 5,
+    "issuer": "Cisco Networking Academy",
+    "status": "Earned",
+    "issued": null,
+    "expires": null,
+    "credentialId": null,
+    "verifyUrl": null,
+    "skills": ["Cybersecurity fundamentals", "Threat awareness", "Security principles"],
+    "evidence": null,
+    "notes": "Cisco Networking Academy introductory cybersecurity certificate."
   }
 ]

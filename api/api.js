@@ -4,6 +4,7 @@ import projectsData from "@/data/projects.json";
 import certificatesData from "@/data/certificates.json";
 import badgesData from "@/data/badges.json";
 import qualificationsData from "@/data/qualifications.json";
+import experienceData from "@/data/experience.json";
 
 /* =======================
    Utils
@@ -55,7 +56,9 @@ export async function getProjectBySlug(slug) {
    Certificates
 ======================= */
 export async function getCertificates() {
-  return certificatesData;
+  return [...certificatesData].sort(
+    (a, b) => (a.importance ?? Number.MAX_SAFE_INTEGER) - (b.importance ?? Number.MAX_SAFE_INTEGER),
+  );
 }
 
 /* =======================
@@ -71,4 +74,8 @@ export async function getBadges() {
 
 export async function getQualifications() {
   return qualificationsData;
+}
+
+export async function getExperience() {
+  return experienceData;
 }

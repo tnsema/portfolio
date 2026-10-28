@@ -22,7 +22,7 @@ export default function PublicLayout({
         title: "About Me",
         items: [
           { label: "Overview", href: "#about" },
-          { label: "Experience", href: "#about" },
+          { label: "Experience", href: "#experience" },
         ],
       },
       {

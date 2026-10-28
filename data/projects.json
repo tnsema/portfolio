@@ -35,7 +35,7 @@
   },
   {
     "id": "aws-serverless-contact-event-logger", "title": "AWS Serverless Contact Event Logger", "tagline": "A serverless AWS application that receives, validates, and processes JSON requests through an HTTPS Lambda Function URL.", "status": "Completed", "featured": false,
-    "links": { "liveDemo": null, "githubRepo": null, "youtubeDemo": null, "architectureDiagram": null },
+    "links": { "liveDemo": "https://cloud.thosem.com/projects/aws-serverless-contact-event-logger", "githubRepo": null, "youtubeDemo": "https://youtu.be/n2CuB0v-h3M", "architectureDiagram": null },
     "technologies": [{ "name": "AWS Lambda", "category": "Cloud" }, { "name": "Python", "category": "Programming Language" }, { "name": "Amazon CloudWatch", "category": "Monitoring" }, { "name": "AWS IAM", "category": "Security" }, { "name": "Postman", "category": "API Testing" }],
     "problemStatement": { "context": "The application receives JSON requests through an HTTPS endpoint.", "painPoint": "Request handling needs validation, monitoring, and testing.", "solution": "Built a Lambda-based application using a Function URL, IAM execution permissions, CloudWatch Logs, and Postman testing." },
     "architecture": { "summary": "An HTTPS Lambda Function URL receives JSON requests, which a Python Lambda function validates and processes; CloudWatch Logs supports monitoring and troubleshooting.", "components": [{ "layer": "HTTPS endpoint", "description": "AWS Lambda Function URL receives JSON requests." }, { "layer": "Compute", "description": "Python AWS Lambda function validates and processes requests." }, { "layer": "Operations", "description": "CloudWatch Logs provides monitoring and troubleshooting visibility." }] },
@@ -44,8 +44,8 @@
     "takeaways": { "learnings": ["Built and tested a serverless request-processing application using AWS Lambda and Python.", "Used CloudWatch Logs for monitoring and troubleshooting."], "futureRoadmap": [] }
   },
   {
-    "id": "aws-static-website-hosting", "title": "AWS Static Website Hosting", "tagline": "A static website deployed on Amazon S3 and delivered through CloudFront with HTTPS, custom-domain DNS, and Route 53 integration.", "status": "Completed", "featured": false,
-    "links": { "liveDemo": null, "githubRepo": null, "youtubeDemo": null, "architectureDiagram": null },
+    "id": "aws-static-website-hosting", "title": "Static Website Hosted on AWS S3", "tagline": "A static website deployed using AWS S3 static website hosting.", "status": "Completed", "featured": false,
+    "links": { "liveDemo": "https://cloud.thosem.com/projects/aws-s3-static-website", "githubRepo": null, "youtubeDemo": null, "architectureDiagram": null },
     "technologies": [{ "name": "Amazon S3", "category": "Storage & Hosting" }, { "name": "Amazon CloudFront", "category": "Content Delivery" }, { "name": "AWS IAM", "category": "Security" }, { "name": "Amazon Route 53", "category": "DNS" }],
     "problemStatement": { "context": "A static website needs secure delivery and a custom-domain configuration.", "painPoint": "Website hosting requires content delivery, DNS configuration, access permissions, and ongoing maintenance.", "solution": "Deployed the website on Amazon S3, delivered it through CloudFront, configured HTTPS and Route 53 DNS integration, and applied least-privilege IAM permissions." },
     "architecture": { "summary": "Static website content is hosted in Amazon S3, delivered through CloudFront, and connected to a custom domain using Route 53 DNS records.", "components": [{ "layer": "Hosting", "description": "Amazon S3 hosts the static website." }, { "layer": "Content delivery", "description": "CloudFront delivers website content securely." }, { "layer": "DNS", "description": "Route 53 provides custom-domain DNS integration." }] },
@@ -98,5 +98,15 @@
     "architecture": { "summary": "A React frontend integrates with Node.js and Express.js REST APIs backed by MongoDB to support campus management functions.", "components": [{ "layer": "Frontend", "description": "React provides a responsive user interface." }, { "layer": "API", "description": "Node.js and Express.js provide REST APIs." }, { "layer": "Data", "description": "MongoDB supports platform data." }] },
     "keyImplementations": [{ "title": "Issue reporting", "description": "Implemented issue-reporting functionality." }, { "title": "Campus scheduling", "description": "Implemented timetable management and classroom booking." }, { "title": "Full-stack integration", "description": "Integrated a responsive React frontend with Node.js, Express.js, and MongoDB." }],
     "securityDecisions": [], "technicalChallenges": [], "resilienceTesting": [], "visuals": [], "takeaways": { "learnings": ["Developed REST APIs with Node.js and Express.js and integrated them with a React frontend and MongoDB."], "futureRoadmap": [] }
+  },
+  {
+    "id": "beauno-resort-s3-cloudfront", "title": "Beauno Resort Website Hosted on AWS S3 and CloudFront", "tagline": "A luxury resort static website deployed using Amazon S3 static hosting and CloudFront HTTPS delivery.", "status": "Completed", "featured": false,
+    "links": { "liveDemo": "https://d2nuu2lclhuan1.cloudfront.net/", "githubRepo": null, "youtubeDemo": null, "architectureDiagram": "https://cloud.thosem.com/projects/beauno-resort-s3-cloudfront" },
+    "technologies": [{ "name": "Amazon S3", "category": "Storage & Hosting" }, { "name": "Amazon CloudFront", "category": "Content Delivery" }, { "name": "AWS IAM", "category": "Security" }],
+    "problemStatement": { "context": "A resort website needs reliable static hosting with secure public delivery.", "painPoint": "The site needs a scalable hosting setup that can deliver content over HTTPS.", "solution": "Deployed the website to Amazon S3 and used CloudFront to provide HTTPS content delivery." },
+    "architecture": { "summary": "Static website assets are hosted in Amazon S3 and distributed securely through Amazon CloudFront.", "components": [{ "layer": "Hosting", "description": "Amazon S3 stores and serves the static website assets." }, { "layer": "Content delivery", "description": "Amazon CloudFront delivers the website over HTTPS." }, { "layer": "Access", "description": "AWS IAM controls access to the cloud resources." }] },
+    "keyImplementations": [{ "title": "Static site hosting", "description": "Deployed the luxury resort website using Amazon S3 static website hosting." }, { "title": "HTTPS delivery", "description": "Configured CloudFront to distribute the site securely." }, { "title": "Cloud access control", "description": "Used IAM as part of the AWS deployment." }],
+    "securityDecisions": [{ "title": "Secure delivery", "decision": "Used CloudFront HTTPS delivery for public website access." }], "technicalChallenges": [], "resilienceTesting": [], "visuals": [],
+    "takeaways": { "learnings": ["Deployed a static website with Amazon S3 and CloudFront.", "Applied cloud delivery and IAM concepts to a public-facing website."], "futureRoadmap": [] }
   }
 ]
