@@ -5,7 +5,7 @@ import {
   getQualifications,
   getExperience,
 } from "@/api/api";
-import { Award, Briefcase, FolderKanban, Github, Linkedin, Mail } from "lucide-react";
+import { Award, Briefcase, Cloud, Code2, Database, FolderKanban, GitBranch, Github, Linkedin, Mail, MonitorSmartphone, Server } from "lucide-react";
 
 export default async function Page() {
   const projects = await getProjects();
@@ -146,8 +146,7 @@ export default async function Page() {
             </h2>
             <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-primary" />
             <p className="mt-4 text-muted">
-              Cybersecurity first. Development as a supporting strength. AI as
-              an active interest.
+              Building reliable software, cloud solutions, and infrastructure.
             </p>
           </div>
 
@@ -157,19 +156,23 @@ export default async function Page() {
               <h3 className="text-xl font-semibold mb-4">Summary</h3>
 
               <p className="text-muted leading-relaxed">
-                I focus primarily on cybersecurity, with a strong interest in
-                how systems are built, secured, and maintained. My development
-                knowledge helps me understand applications from both a builder’s
-                and defender’s perspective.
+                I am a cloud-focused software engineer with hands-on experience
+                building and maintaining web applications, AWS solutions, and
+                Linux-based hosting environments. My work spans application
+                development, deployments, DNS, email services, and production
+                troubleshooting.
               </p>
 
               <p className="mt-4 text-muted leading-relaxed">
-                I’m also exploring artificial intelligence, particularly how it
-                can be used responsibly in security, automation, and analysis.
+                I currently develop the SAMDDRA membership platform while
+                supporting containerized workloads, GitHub Actions deployment
+                workflows, and cloud infrastructure planning. I bring a
+                practical, security-conscious approach to delivering dependable
+                systems.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                {["Cybersecurity-first", "Builder mindset", "AI-curious"].map(
+                {["Cloud engineering", "Software development", "Infrastructure & DevOps", "AWS Certified"].map(
                   (t) => (
                     <span
                       key={t}
@@ -192,15 +195,15 @@ export default async function Page() {
                 {[
                   {
                     title: "Primary focus",
-                    desc: "Cybersecurity and defensive security practices",
+                    desc: "Cloud engineering, software delivery, and infrastructure",
                   },
                   {
-                    title: "Supporting skills",
-                    desc: "Software development, scripting, and system understanding",
+                    title: "Current role",
+                    desc: "Software Engineer at Samddra",
                   },
                   {
-                    title: "Current interest",
-                    desc: "Applying AI to security workflows and automation",
+                    title: "Credentials",
+                    desc: "AWS Certified Cloud Practitioner and AWS re/Start graduate",
                   },
                   { title: "Location", desc: "South Africa" },
                 ].map((item) => (
@@ -413,87 +416,105 @@ export default async function Page() {
       {/* SKILLS (White) */}
       <section id="skills" className="order-4 min-h-screen flex items-center bg-gradient-to-b from-white to-[#F6F1E6]">
         <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 w-full py-16">
-          <div className="text-center">
-            <h2 className="font-orbitron text-3xl sm:text-4xl font-bold">
-              Skills
-            </h2>
-            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-primary" />
-            <p className="mt-4 text-muted">
-              A practical skill set shaped by hands-on learning and projects.
-            </p>
-          </div>
+          <div className="rounded-[2rem] border border-black/10 bg-white/70 p-4 shadow-sm backdrop-blur sm:p-6">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <h2 className="font-orbitron text-3xl font-bold sm:text-4xl">
+                  Technical Expertise
+                </h2>
+                <p className="mt-2 text-muted">
+                  Cloud, infrastructure, engineering, and delivery capabilities.
+                </p>
+              </div>
+              <span className="rounded-full bg-[#F6F1E6] px-3 py-1.5 text-sm font-medium text-muted">
+                Core capabilities
+              </span>
+            </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="mt-6 grid gap-3 md:grid-cols-2">
             {[
               {
-                title: "Cybersecurity",
-                items: [
-                  "CIA Triad (Confidentiality, Integrity, Availability)",
-                  "Basic Linux usage and permissions",
-                  "Understanding users, groups, and file access",
-                  "Intro to networking concepts (IP, ports, protocols)",
-                  "Awareness of common security threats",
-                  "Why logging and monitoring are important",
-                  "Developing a security-first mindset",
+                title: "AWS Cloud Practitioner Coverage",
+                icon: Cloud,
+                className: "md:col-span-2",
+                items: [],
+                groups: [
+                  ["Compute", "EC2, Lambda, Elastic Beanstalk, Lightsail, Auto Scaling"],
+                  ["Storage", "S3, S3 Glacier, EBS, EFS, AWS Backup"],
+                  ["Networking", "VPC, Route 53, CloudFront, API Gateway, Elastic Load Balancing"],
+                  ["Security", "IAM, IAM Identity Center, KMS, Cognito, WAF, GuardDuty"],
+                  ["Databases", "RDS, Aurora, DynamoDB, ElastiCache"],
+                  ["Management", "CloudWatch, CloudTrail, CloudFormation, Config, Systems Manager"],
+                  ["Integration & cost", "SNS, SQS, EventBridge, Step Functions, Cost Explorer, Budgets"],
                 ],
               },
               {
-                title: "Software Development",
+                title: "Linux & Infrastructure",
+                icon: Server,
                 items: [
-                  "JavaScript fundamentals and modern ES features",
-                  "TypeScript basics and type safety concepts",
-                  "React fundamentals and component-based UI design",
-                  "Next.js basics (routing, layouts, static generation)",
-                  "Java programming fundamentals",
-                  "Frontend basics (HTML, CSS, Tailwind)",
-                  "Basic API consumption and request handling",
-                  "Database fundamentals (MySQL, MongoDB)",
-                  "Introductory PL/SQL concepts",
-                  "Git and version control workflows",
+                  "Ubuntu",
+                  "Nginx",
+                  "SSH",
+                  "DNS",
+                  "SSL/TLS",
+                  "cPanel",
                 ],
               },
               {
-                title: "AI & Tooling",
+                title: "DevOps & CI/CD",
+                icon: GitBranch,
                 items: [
-                  "AI and machine learning fundamentals",
-                  "Supervised vs unsupervised learning concepts",
-                  "Basic understanding of common ML algorithms",
-                  "Intro to model training and evaluation",
-                  "Awareness of data quality and bias",
-                  "Using AI tools to support learning and productivity",
-                  "Exploring responsible and secure use of AI",
+                  "Docker",
+                  "Docker Compose",
+                  "GitHub Actions",
+                  "Git",
+                  "GitHub",
+                  "CI/CD",
                 ],
               },
               {
-                title: "Professional Skills",
+                title: "Backend Engineering",
+                icon: Code2,
                 items: [
-                  "Clear technical documentation",
-                  "Breaking problems into manageable steps",
-                  "Following structured processes",
-                  "Learning through labs and hands-on practice",
-                  "Asking the right technical questions",
-                  "Researching unfamiliar topics effectively",
-                  "Working with feedback and iteration",
+                  "Java",
+                  "Spring Boot",
+                  "PHP",
+                  "CodeIgniter",
+                  "Node.js",
+                  "REST APIs",
                 ],
               },
-            ].map((col) => (
+              {
+                title: "Frontend Engineering",
+                icon: MonitorSmartphone,
+                items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML/CSS"],
+              },
+              {
+                title: "Databases",
+                icon: Database,
+                items: ["PostgreSQL", "MySQL", "MongoDB", "SQL", "Database design", "Data modelling"],
+              },
+            ].map((col: any) => (
               <div
                 key={col.title}
-                className="rounded-3xl border border-black/10 bg-[#F6F1E6]/40 p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                className={`rounded-2xl bg-[#F6F1E6]/70 p-5 transition-all hover:-translate-y-0.5 hover:bg-[#F6F1E6] hover:shadow-sm sm:p-6 ${col.className ?? ""}`}
               >
-                <h3 className="font-orbitron text-xl font-bold text-primary mb-4">
-                  {col.title}
-                </h3>
-                <ul className="space-y-3 text-muted">
-                  {col.items.map((i) => (
-                    <li key={i} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
-                      <span>{i}</span>
-                    </li>
-                  ))}
-                </ul>
+                <col.icon size={22} className="text-muted" aria-hidden="true" />
+                <h3 className="mt-5 font-orbitron text-lg font-bold">{col.title}</h3>
+                {col.groups ? (
+                  <div className="mt-4 grid gap-x-8 gap-y-3 text-sm leading-relaxed text-muted sm:grid-cols-2">
+                    {col.groups.map(([label, services]: [string, string]) => (
+                      <p key={label}>
+                        <span className="font-semibold text-black">{label}: </span>
+                        {services}
+                      </p>
+                    ))}
+                  </div>
+                ) : null}
+                <p className="mt-3 leading-relaxed text-muted">{col.items.join(" · ")}</p>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </section>
