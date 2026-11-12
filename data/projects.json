@@ -1,4 +1,157 @@
 [
+
+  {
+  "id": "awayclock",
+  "title": "AwayClock",
+  "tagline": "An offline-first employee attendance platform that captures credible worksite presence evidence for remote rail, mining and field operations.",
+  "status": "Completed",
+  "featured": true,
+  "links": {
+    "liveDemo": null,
+    "githubRepo": null,
+    "youtubeDemo": null,
+    "architectureDiagram": null
+  },
+  "technologies": [
+    { "name": "Flutter", "category": "Mobile" },
+    { "name": "Next.js", "category": "Frontend" },
+    { "name": "Spring Boot", "category": "Backend" },
+    { "name": "PostgreSQL", "category": "Database" },
+    { "name": "ObjectBox", "category": "Offline storage" },
+    { "name": "Docker", "category": "Deployment" },
+    { "name": "Caddy", "category": "Infrastructure" },
+    { "name": "Face recognition AI", "category": "Emerging technology" },
+    { "name": "Edge computing", "category": "Emerging technology" },
+    { "name": "Ethereum Sepolia", "category": "Blockchain" }
+  ],
+  "problemStatement": {
+    "context": "Companies in rail, mining and field operations send employees to remote worksites where managers need confidence that assigned worksite visits actually happened.",
+    "painPoint": "An employee statement, paper register or report submitted later does not independently prove that the employee reached the assigned Worksite. Poor network coverage can also prevent normal online-only attendance systems from working when they are needed most.",
+    "solution": "AwayClock links planned WorkSessions to Employee Check In and Check Out events. It captures attendance evidence on the mobile device, stores it safely offline when coverage is unavailable, synchronises it later, and gives Admin users a central attendance and reporting view."
+  },
+  "architecture": {
+    "summary": "AwayClock uses a mobile-first, offline-capable architecture. The Flutter Employee application captures attendance evidence locally, then synchronises securely with a Docker-hosted Spring Boot API and PostgreSQL database. Admin and Root users manage the platform through a Next.js web portal.",
+    "components": [
+      {
+        "layer": "Employee mobile application",
+        "description": "Flutter Android application used by Employees to complete Check In and Check Out at assigned Worksites."
+      },
+      {
+        "layer": "Edge processing",
+        "description": "Performs face-verification support, GPS or geofence evidence collection and local attendance persistence on the device."
+      },
+      {
+        "layer": "Offline queue",
+        "description": "Uses ObjectBox to retain AttendanceEvents locally when connectivity is unavailable and synchronise them when the device reconnects."
+      },
+      {
+        "layer": "Backend API",
+        "description": "Spring Boot REST API validates business rules, including WorkSession assignment conflicts, and manages central attendance processing."
+      },
+      {
+        "layer": "Data layer",
+        "description": "PostgreSQL stores Employees, Worksites, WorkSessions, Assignments and AttendanceEvents in an auditable relational structure."
+      },
+      {
+        "layer": "Web portal",
+        "description": "Next.js portal for Root and Admin users to manage operations, review attendance and export reports."
+      },
+      {
+        "layer": "Deployment",
+        "description": "Docker-hosted services on a VPS, with Caddy providing HTTPS and reverse-proxy routing."
+      }
+    ]
+  },
+  "keyImplementations": [
+    {
+      "title": "Offline-first attendance capture",
+      "description": "Employees can record Check In and Check Out events even when remote worksites have poor or no network coverage."
+    },
+    {
+      "title": "Employee attendance evidence",
+      "description": "AttendanceEvents connect the Employee, Worksite, WorkSession, attendance action, time and supporting location or identity evidence."
+    },
+    {
+      "title": "WorkSession assignment validation",
+      "description": "Prevents an Employee from being assigned to overlapping WorkSessions, improving planning integrity."
+    },
+    {
+      "title": "Attendance review and reporting",
+      "description": "Admin users can review synchronised AttendanceEvents centrally and export reporting data for operational follow-up."
+    },
+    {
+      "title": "Blockchain batch verification",
+      "description": "Creates a SHA-256 hash for an attendance batch and anchors that hash on Ethereum Sepolia for later tamper verification."
+    }
+  ],
+  "securityDecisions": [
+    {
+      "title": "Role-based access",
+      "decision": "Separates Root, Admin and Employee responsibilities to support accountability and limit access to operational data."
+    },
+    {
+      "title": "Offline data protection",
+      "decision": "Stores attendance locally only when necessary and synchronises it with the central API once connectivity returns."
+    },
+    {
+      "title": "Privacy-preserving blockchain use",
+      "decision": "Anchors only a SHA-256 attendance batch hash on Ethereum Sepolia. Personal, location and biometric data remain off-chain."
+    },
+    {
+      "title": "Transparent biometric limitations",
+      "decision": "Uses face verification as supporting attendance evidence rather than claiming it is perfect or sufficient on its own."
+    }
+  ],
+  "technicalChallenges": [
+    {
+      "challenge": "Capturing reliable employee attendance evidence at remote sites with weak connectivity.",
+      "solution": "Implemented an offline-first mobile workflow using ObjectBox local persistence and later synchronisation.",
+      "outcome": "Employees can preserve AttendanceEvents without waiting for a live network connection."
+    },
+    {
+      "challenge": "Linking attendance to a planned operational assignment.",
+      "solution": "Modelled Worksites, WorkSessions, Assignments and AttendanceEvents in the backend and added conflict validation.",
+      "outcome": "Attendance records can be traced to the relevant Employee, Worksite and planned session."
+    },
+    {
+      "challenge": "Adding blockchain without exposing sensitive attendance evidence.",
+      "solution": "Used SHA-256 batch hashes for Ethereum Sepolia anchoring instead of storing personal, biometric or location data on-chain.",
+      "outcome": "The system can detect whether an anchored attendance batch was changed later."
+    }
+  ],
+  "resilienceTesting": [
+    {
+      "title": "Blockchain controller testing",
+      "result": "BlockchainAnchorControllerTest completed with 8 tests passed, 0 failures and 0 errors."
+    },
+    {
+      "title": "Employee Check In prototype test",
+      "result": "5 out of 5 recorded Employee Check In attempts succeeded, with a mean Check In time of 8.24 seconds."
+    }
+  ],
+  "visuals": [
+    {
+      "type": "image",
+      "caption": "AwayClock mobile attendance, work-session assignment, and admin attendance review interfaces",
+      "url": "/projects/awayclock/awayclock-product-showcase.png"
+    }
+  ],
+  "takeaways": {
+    "learnings": [
+      "How edge computing and offline local storage can support reliable mobile workflows at remote worksites.",
+      "How role-based planning, attendance evidence and reporting can form an auditable operational workflow.",
+      "How blockchain can provide tamper evidence without exposing sensitive attendance data.",
+      "How Docker-based deployment helps keep web, API and database services consistent on a VPS."
+    ],
+    "futureRoadmap": [
+      "Measure offline synchronisation performance under realistic network conditions.",
+      "Conduct broader user acceptance testing with Employees and Admin users.",
+      "Add evidence-retention rules, monitoring and production-grade audit logging.",
+      "Evaluate face-verification performance across different lighting and camera conditions."
+    ]
+  }
+},
+
   {
     "id": "password-strength-analyzer",
     "title": "Password Strength Analyzer",

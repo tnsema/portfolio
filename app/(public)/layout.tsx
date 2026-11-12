@@ -110,7 +110,7 @@ export default function PublicLayout({
                   <button
                     type="button"
                     onClick={() => toggle(d.key)}
-                    className="flex w-full items-center justify-between rounded-lg bg-gray-900 px-4 py-3 text-left transition-colors hover:bg-gray-800"
+                    className="flex w-full items-center justify-between rounded-md bg-white px-4 py-3 text-left text-black transition-colors hover:bg-white/90"
                   >
                     <span>{d.title}</span>
                     <ChevronDown
@@ -146,7 +146,7 @@ export default function PublicLayout({
             <a
               href="#certifications"
               onClick={close}
-              className="block rounded-lg bg-gray-900 px-4 py-3 transition-colors hover:bg-gray-800"
+              className="block rounded-md bg-white px-4 py-3 text-black transition-colors hover:bg-white/90"
             >
               Certifications
             </a>
@@ -154,7 +154,7 @@ export default function PublicLayout({
             <a
               href="#contact"
               onClick={close}
-              className="block rounded-lg bg-gray-900 px-4 py-3 transition-colors hover:bg-gray-800"
+              className="block rounded-md bg-white px-4 py-3 text-black transition-colors hover:bg-white/90"
             >
               Contact Me
             </a>

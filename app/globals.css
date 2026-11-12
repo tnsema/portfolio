@@ -63,6 +63,45 @@ body {
   font-family: var(--font-body);
 }
 
+/* Reusable action buttons */
+.button-solid,
+.button-outline {
+  align-items: center;
+  border-radius: 0.5rem !important;
+  display: inline-flex;
+  gap: 0.5rem;
+  justify-content: center;
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.button-solid {
+  background-color: var(--primary) !important;
+  border: 1px solid var(--primary) !important;
+  color: #ffffff !important;
+}
+
+.button-solid:hover {
+  filter: brightness(0.92);
+}
+
+.button-outline {
+  background-color: #ffffff !important;
+  border: 1px solid var(--primary) !important;
+  color: var(--primary) !important;
+}
+
+.button-outline:hover {
+  background-color: color-mix(in srgb, var(--primary) 8%, #ffffff) !important;
+}
+
+/* Cards share the same compact corner language as the button system. */
+article,
+figure,
+header[class*="rounded-"],
+div[class*="rounded-"][class*="border"][class*="shadow"] {
+  border-radius: 0.5rem !important;
+}
+
 /* Lets the hero portrait fade into the section itself, rather than a white box. */
 .hero-photo {
   -webkit-mask-image: radial-gradient(

@@ -28,7 +28,7 @@ export default async function ProjectPage({
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h1 className="font-orbitron text-3xl font-bold">Project not found</h1>
           <p className="mt-4 text-muted">That project does not exist in the project list.</p>
-          <a href="/#projects" className="mt-8 inline-block rounded-2xl bg-primary px-6 py-3 font-semibold text-black">
+          <a href="/#projects" className="button-solid mt-8 px-6 py-3 font-semibold">
             Back to projects
           </a>
         </div>
@@ -47,7 +47,7 @@ export default async function ProjectPage({
   return (
     <section className="min-h-screen bg-gradient-to-b from-white to-[#F6F1E6] py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-12">
-        <a href="/#projects" className="inline-flex rounded-2xl border border-black/10 bg-white/70 px-5 py-2 font-semibold transition-all hover:-translate-y-0.5 hover:shadow-lg">
+        <a href="/#projects" className="button-outline px-5 py-2 font-semibold hover:-translate-y-0.5 hover:shadow-lg">
           ← Back to projects
         </a>
 
@@ -81,7 +81,7 @@ export default async function ProjectPage({
             {links.length ? (
               <div className="mt-8 flex flex-wrap gap-3">
                 {links.map((link) => (
-                  <a key={link.label} href={link.url} target="_blank" rel="noreferrer" className={link.primary ? "inline-flex items-center gap-2 rounded-2xl bg-primary px-5 py-3 font-semibold text-black transition-all hover:-translate-y-0.5 hover:shadow-xl" : "inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-5 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-white/20"}>
+                  <a key={link.label} href={link.url} target="_blank" rel="noreferrer" className={link.primary ? "button-solid px-5 py-3 font-semibold hover:-translate-y-0.5 hover:shadow-xl" : "button-outline px-5 py-3 font-semibold hover:-translate-y-0.5 hover:shadow-xl"}>
                     {link.label}
                     <ExternalLink size={16} aria-hidden="true" />
                   </a>

@@ -1,3 +1,6 @@
+import { ArrowRight, Home } from "lucide-react";
+import { OutlineButton, SolidButton } from "@/components/ui/buttons";
+
 export default function NotFound() {
   return (
     <section className="min-h-screen flex items-center bg-gradient-to-b from-[#F6F1E6] to-white">
@@ -18,19 +21,21 @@ export default function NotFound() {
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <a
+          <SolidButton
             href="/"
-            className="rounded-2xl bg-primary px-6 py-3 font-semibold text-black transition-all hover:-translate-y-0.5 hover:shadow-xl"
+            className="px-6 py-3 font-semibold hover:-translate-y-0.5 hover:shadow-xl"
           >
             Go home
-          </a>
+            <Home size={17} aria-hidden="true" />
+          </SolidButton>
 
-          <a
+          <OutlineButton
             href="/#projects"
-            className="rounded-2xl border border-black/10 bg-white px-6 py-3 font-semibold transition-all hover:-translate-y-0.5 hover:shadow-lg"
+            className="px-6 py-3 font-semibold hover:-translate-y-0.5 hover:shadow-lg"
           >
             View projects
-          </a>
+            <ArrowRight size={17} aria-hidden="true" />
+          </OutlineButton>
         </div>
 
         <p className="mt-10 text-sm text-muted">portfolio.thosem.com</p>

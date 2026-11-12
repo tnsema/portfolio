@@ -5,7 +5,8 @@ import {
   getQualifications,
   getExperience,
 } from "@/api/api";
-import { Award, Briefcase, Cloud, Code2, Database, FolderKanban, GitBranch, Github, Linkedin, Mail, MonitorSmartphone, Server } from "lucide-react";
+import { OutlineButton, SolidButton } from "@/components/ui/buttons";
+import { ArrowRight, Award, Briefcase, Cloud, Code2, Database, ExternalLink, FolderKanban, GitBranch, Github, Linkedin, Mail, MonitorSmartphone, Server } from "lucide-react";
 
 export default async function Page() {
   const projects = await getProjects();
@@ -61,46 +62,46 @@ export default async function Page() {
 
               {/* CTA row */}
               <div className="mt-10 flex flex-wrap gap-3 justify-center md:justify-start animate-fade-up-delay3">
-                <a
+                <SolidButton
                   href="#projects"
                   aria-label="View projects"
                   title="View projects"
-                  className="group inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-primary px-6 font-semibold text-black transition-all hover:-translate-y-0.5 hover:shadow-2xl"
+                  className="group h-12 px-6 font-semibold hover:-translate-y-0.5 hover:shadow-2xl"
                 >
                   <FolderKanban size={21} aria-hidden="true" />
                   <span>View Projects</span>
-                </a>
+                </SolidButton>
 
-                <a
+                <OutlineButton
                   href="#contact"
                   aria-label="Contact Thobile"
                   title="Contact"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-black/10 bg-white/70 backdrop-blur transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                  className="h-15 min-h-0 w-15 px-0 py-0 shadow-md hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   <Mail size={21} aria-hidden="true" />
-                </a>
+                </OutlineButton>
 
-                <a
+                <OutlineButton
                   href="https://github.com/tnsema"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GitHub profile"
                   title="GitHub"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-black/10 bg-white/70 backdrop-blur transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                  className="h-15 min-h-0 w-15 px-0 py-0 shadow-md hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   <Github size={21} aria-hidden="true" />
-                </a>
+                </OutlineButton>
 
-                <a
+                <OutlineButton
                   href="https://www.linkedin.com/in/tnsema/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn profile"
                   title="LinkedIn"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-black/10 bg-white/70 backdrop-blur transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                  className="h-15 min-h-0 w-15 px-0 py-0 shadow-md hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   <Linkedin size={21} aria-hidden="true" />
-                </a>
+                </OutlineButton>
 
               </div>
 
@@ -152,7 +153,7 @@ export default async function Page() {
 
           <div className="mt-12 grid gap-10 md:grid-cols-2 items-start">
             {/* Summary */}
-            <div className="rounded-3xl border border-black/10 bg-white/70 backdrop-blur p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
+            <div className="rounded-lg border border-black/10 bg-white/70 backdrop-blur p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
               <h3 className="text-xl font-semibold mb-4">Summary</h3>
 
               <p className="text-muted leading-relaxed">
@@ -186,7 +187,7 @@ export default async function Page() {
             </div>
 
             {/* Quick facts */}
-            <div className="rounded-3xl border border-black/10 bg-white/70 backdrop-blur p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
+            <div className="rounded-lg border border-black/10 bg-white/70 backdrop-blur p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
               <h3 className="font-orbitron text-lg font-bold text-primary mb-5">
                 Quick Facts
               </h3>
@@ -240,7 +241,7 @@ export default async function Page() {
           <div className="mx-auto mt-12 max-w-5xl">
             {experience.map((job: any, index: number) => (
               <div key={`${job.role}-${job.company}`}>
-                <article className="rounded-3xl border border-black/10 bg-white/80 p-8 shadow-sm backdrop-blur transition-all hover:-translate-y-1 hover:shadow-xl">
+                <article className="rounded-lg border border-black/10 bg-white/80 p-8 shadow-sm backdrop-blur transition-all hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-start justify-between gap-5">
                     <div className="flex min-w-0 items-start gap-4">
                       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary/15 text-primary">
@@ -313,7 +314,7 @@ export default async function Page() {
                 className="relative"
               >
                 <article
-                  className="rounded-3xl border border-black/10 bg-white/80 p-8 shadow-sm backdrop-blur transition-all hover:-translate-y-1 hover:shadow-xl"
+                  className="rounded-lg border border-black/10 bg-white/80 p-8 shadow-sm backdrop-blur transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
                 <div className="flex items-start justify-between gap-4">
                   <div>
@@ -387,7 +388,7 @@ export default async function Page() {
                           <span className="absolute left-0 top-1 flex h-7 w-7 items-center justify-center rounded-lg border border-black/10 bg-[#F6F1E6] text-primary">
                             <Award size={15} aria-hidden="true" />
                           </span>
-                          <div className="rounded-2xl border border-black/10 bg-[#F6F1E6]/60 px-4 py-3">
+                          <div className="rounded-lg border border-black/10 bg-[#F6F1E6]/60 px-4 py-3">
                             <p className="font-semibold">{award.title}</p>
                             <p className="mt-1 text-sm text-muted">
                               {q.institution} <span className="mx-1">•</span> {award.year}
@@ -416,7 +417,7 @@ export default async function Page() {
       {/* SKILLS (White) */}
       <section id="skills" className="order-4 min-h-screen flex items-center bg-gradient-to-b from-white to-[#F6F1E6]">
         <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 w-full py-16">
-          <div className="rounded-[2rem] border border-black/10 bg-white/70 p-4 shadow-sm backdrop-blur sm:p-6">
+          <div className="rounded-lg border border-black/10 bg-white/70 p-4 shadow-sm backdrop-blur sm:p-6">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
                 <h2 className="font-orbitron text-3xl font-bold sm:text-4xl">
@@ -497,7 +498,7 @@ export default async function Page() {
             ].map((col: any) => (
               <div
                 key={col.title}
-                className={`rounded-2xl bg-[#F6F1E6]/70 p-5 transition-all hover:-translate-y-0.5 hover:bg-[#F6F1E6] hover:shadow-sm sm:p-6 ${col.className ?? ""}`}
+                className={`rounded-lg bg-[#F6F1E6]/70 p-5 transition-all hover:-translate-y-0.5 hover:bg-[#F6F1E6] hover:shadow-sm sm:p-6 ${col.className ?? ""}`}
               >
                 <col.icon size={22} className="text-muted" aria-hidden="true" />
                 <h3 className="mt-5 font-orbitron text-lg font-bold">{col.title}</h3>
@@ -539,7 +540,7 @@ export default async function Page() {
             {projects.map((p: any) => (
               <article
                 key={p.slug}
-                className="group rounded-3xl border border-black/10 bg-white/70 backdrop-blur overflow-hidden shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                className="group rounded-lg border border-black/10 bg-white/70 backdrop-blur overflow-hidden shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="h-36 overflow-hidden border-b border-black/10 relative bg-black">
                   <img
@@ -576,33 +577,36 @@ export default async function Page() {
 
                   <div className="mt-6 flex flex-wrap gap-3">
                     {/* NEW: Details button */}
-                    <a
+                    <SolidButton
                       href={`/projects/${p.slug}`}
-                      className="rounded-2xl bg-primary px-4 py-2 font-semibold text-black transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                      className="px-4 py-2 font-semibold hover:-translate-y-0.5 hover:shadow-xl"
                     >
                       Details
-                    </a>
+                      <ArrowRight size={16} aria-hidden="true" />
+                    </SolidButton>
 
                     {p.links?.repo && p.links.repo !== "#" && (
-                      <a
+                      <OutlineButton
                         href={p.links.repo}
                         target="_blank"
                         rel="noreferrer"
-                        className="rounded-2xl border border-black/10 bg-white px-4 py-2 font-semibold transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                        className="px-4 py-2 font-semibold hover:-translate-y-0.5 hover:shadow-lg"
                       >
                         Repo
-                      </a>
+                        <Github size={16} aria-hidden="true" />
+                      </OutlineButton>
                     )}
 
                     {p.links?.demo && p.links.demo !== "#" && (
-                      <a
+                      <OutlineButton
                         href={p.links.demo}
                         target="_blank"
                         rel="noreferrer"
-                        className="rounded-2xl border border-black/10 bg-white px-4 py-2 font-semibold transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                        className="px-4 py-2 font-semibold hover:-translate-y-0.5 hover:shadow-lg"
                       >
                         Demo
-                      </a>
+                        <ExternalLink size={16} aria-hidden="true" />
+                      </OutlineButton>
                     )}
                   </div>
                 </div>
@@ -611,14 +615,15 @@ export default async function Page() {
           </div>
 
           <div className="mt-12 text-center">
-            <a
+            <OutlineButton
               href="https://github.com/tnsema"
               target="_blank"
               rel="noreferrer"
-              className="inline-block rounded-2xl border border-black/10 bg-white px-6 py-3 font-semibold transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              className="px-6 py-3 hover:-translate-y-0.5 hover:shadow-lg"
             >
               View more on GitHub
-            </a>
+              <Github size={17} aria-hidden="true" />
+            </OutlineButton>
           </div>
         </div>
       </section>
@@ -640,12 +645,13 @@ export default async function Page() {
 
             {/* Optional: link to the full certificates page */}
             <div className="mt-8">
-              <a
+              <OutlineButton
                 href="/certificates"
-                className="inline-block rounded-2xl border border-black/10 bg-[#F6F1E6]/40 px-6 py-3 font-semibold transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                className="px-6 py-3 hover:-translate-y-0.5 hover:shadow-lg"
               >
                 View all certificates
-              </a>
+                <ArrowRight size={17} aria-hidden="true" />
+              </OutlineButton>
             </div>
           </div>
 
@@ -666,7 +672,7 @@ export default async function Page() {
               return (
                 <article
                   key={`${c.name}-${c.issuer}`}
-                  className="rounded-3xl border border-black/10 bg-[#F6F1E6]/40 p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                  className="rounded-lg border border-black/10 bg-[#F6F1E6]/40 p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
@@ -708,14 +714,15 @@ export default async function Page() {
 
                   <div className="mt-6 flex flex-wrap gap-3">
                     {c.verifyUrl ? (
-                      <a
+                      <SolidButton
                         href={c.verifyUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-block rounded-2xl bg-primary px-4 py-2 font-semibold text-black transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                        className="px-4 py-2 font-semibold hover:-translate-y-0.5 hover:shadow-xl"
                       >
                         Verify
-                      </a>
+                        <ExternalLink size={16} aria-hidden="true" />
+                      </SolidButton>
                     ) : null}
 
                     {c.evidence ? (
@@ -756,7 +763,7 @@ export default async function Page() {
             {badges.map((b: any) => (
               <article
                 key={`${b.name}-${b.issuer}-${b.year}-${b.status}`}
-                className="rounded-3xl border border-black/10 bg-white/70 backdrop-blur p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-lg border border-black/10 bg-white/70 backdrop-blur p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
               >
                 <p className="font-orbitron text-xs tracking-[0.25em] text-primary">
                   {b.type?.toUpperCase?.() ?? "BADGE"}
@@ -790,9 +797,10 @@ export default async function Page() {
                     href={b.verifyUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-6 inline-block rounded-2xl border border-black/10 bg-white px-4 py-2 font-semibold transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                    className="button-outline mt-6 px-4 py-2 font-semibold hover:-translate-y-0.5 hover:shadow-lg"
                   >
                     Verify
+                    <ExternalLink size={16} aria-hidden="true" />
                   </a>
                 ) : null}
               </article>
@@ -817,7 +825,7 @@ export default async function Page() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <a
               href="mailto:thobilesema@gmail.com"
-              className="rounded-3xl border border-black/10 bg-[#F6F1E6]/40 p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+              className="rounded-lg border border-black/10 bg-[#F6F1E6]/40 p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
             >
               <p className="font-orbitron text-sm tracking-widest text-primary">
                 EMAIL
@@ -829,7 +837,7 @@ export default async function Page() {
               href="https://github.com/tnsema"
               target="_blank"
               rel="noreferrer"
-              className="rounded-3xl border border-black/10 bg-[#F6F1E6]/40 p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+              className="rounded-lg border border-black/10 bg-[#F6F1E6]/40 p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
             >
               <p className="font-orbitron text-sm tracking-widest text-primary">
                 GITHUB
@@ -841,7 +849,7 @@ export default async function Page() {
               href="https://www.linkedin.com/in/tnsema/"
               target="_blank"
               rel="noreferrer"
-              className="rounded-3xl border border-black/10 bg-[#F6F1E6]/40 p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+              className="rounded-lg border border-black/10 bg-[#F6F1E6]/40 p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
             >
               <p className="font-orbitron text-sm tracking-widest text-primary">
                 LINKEDIN
@@ -853,7 +861,7 @@ export default async function Page() {
               href="/downloads/cv.pdf"
               target="_blank"
               rel="noreferrer"
-              className="rounded-3xl border border-black/10 bg-[#F6F1E6]/40 p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+              className="rounded-lg border border-black/10 bg-[#F6F1E6]/40 p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
             >
               <p className="font-orbitron text-sm tracking-widest text-primary">
                 CV

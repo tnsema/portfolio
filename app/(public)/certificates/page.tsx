@@ -1,4 +1,6 @@
 import { getCertificates } from "@/api/api";
+import { OutlineButton, SolidButton } from "@/components/ui/buttons";
+import { ExternalLink, Mail } from "lucide-react";
 
 function formatDate(input: string | null) {
   if (/^\d{4}$/.test(input ?? "")) return input;
@@ -41,7 +43,7 @@ export default async function CertificatesPage() {
           <div className="mt-8">
             <a
               href="/#certifications"
-              className="inline-block rounded-2xl border border-black/10 bg-white/70 backdrop-blur px-6 py-3 font-semibold transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              className="button-outline px-6 py-3 font-semibold hover:-translate-y-0.5 hover:shadow-lg"
             >
               ← Back to Home
             </a>
@@ -53,7 +55,7 @@ export default async function CertificatesPage() {
           {certificates.map((c) => (
             <article
               key={`${c.name}-${c.issuer}`}
-              className="group rounded-3xl border border-black/10 bg-white/70 backdrop-blur p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+              className="group rounded-lg border border-black/10 bg-white/70 backdrop-blur p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
             >
               {/* Top row */}
               <div className="flex items-start justify-between gap-4">
@@ -115,25 +117,26 @@ export default async function CertificatesPage() {
               {/* Actions */}
               <div className="mt-8 flex flex-wrap gap-3">
                 {c.verifyUrl ? (
-                  <a
+                  <SolidButton
                     href={c.verifyUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-2xl bg-primary px-4 py-2 font-semibold text-black transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                    className="px-4 py-2 font-semibold hover:-translate-y-0.5 hover:shadow-xl"
                   >
                     Verify
-                  </a>
+                    <ExternalLink size={16} aria-hidden="true" />
+                  </SolidButton>
                 ) : null}
 
                 {c.evidence ? (
-                  <a
+                  <OutlineButton
                     href={c.evidence}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-2xl border border-black/10 bg-white px-4 py-2 font-semibold transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                    className="px-4 py-2 font-semibold hover:-translate-y-0.5 hover:shadow-lg"
                   >
                     Evidence
-                  </a>
+                  </OutlineButton>
                 ) : null}
               </div>
 
@@ -154,12 +157,13 @@ export default async function CertificatesPage() {
             If you want to do something do it now, because later the coffee gets
             cold.
           </p>
-          <a
+          <SolidButton
             href="/#contact"
-            className="mt-7 inline-block rounded-2xl bg-primary px-7 py-3 font-semibold text-black transition-all hover:-translate-y-0.5 hover:shadow-xl"
+            className="mt-7 px-7 py-3 font-semibold hover:-translate-y-0.5 hover:shadow-xl"
           >
             Contact me
-          </a>
+            <Mail size={17} aria-hidden="true" />
+          </SolidButton>
         </div>
       </div>
     </section>

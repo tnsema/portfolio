@@ -25,20 +25,20 @@
     "issued": "2026",
     "expires": null,
     "credentialId": null,
-    "verifyUrl": null,
+    "verifyUrl": "https://www.credly.com/badges/54c8481a-3714-4435-b89c-7976b4004be5",
     "skills": ["AWS Cloud concepts", "Core AWS services", "Cloud security and compliance", "AWS pricing and support"],
     "evidence": null,
     "notes": "AWS foundational cloud certification."
   },
   {
-    "name": "AWS re/Start Graduate",
+    "name": "AWS re/Start Program",
     "importance": 3,
     "issuer": "AWS / Praesignis",
     "status": "Earned",
     "issued": "2026",
     "expires": null,
     "credentialId": null,
-    "verifyUrl": null,
+    "verifyUrl": "https://www.credly.com/badges/2b90e39e-c254-4a90-869f-440b2e9419a8",
     "skills": ["Cloud computing", "Linux", "Networking", "Career readiness"],
     "evidence": null,
     "notes": "AWS re/Start graduate programme."
@@ -64,7 +64,7 @@
     "issued": null,
     "expires": null,
     "credentialId": null,
-    "verifyUrl": null,
+    "verifyUrl": "https://www.credly.com/badges/15fc3a7f-626d-4400-ae5f-d1489c782fe4",
     "skills": ["Cybersecurity fundamentals", "Threat awareness", "Security principles"],
     "evidence": null,
     "notes": "Cisco Networking Academy introductory cybersecurity certificate."
