@@ -6,6 +6,8 @@ import {
   getExperience,
 } from "@/api/api";
 import { OutlineButton, SolidButton } from "@/components/ui/buttons";
+import { ProjectsSection } from "@/components/projects-section";
+import { Suspense } from "react";
 import { ArrowRight, Award, Briefcase, Cloud, Code2, Database, ExternalLink, FolderKanban, GitBranch, Github, Linkedin, Mail, MonitorSmartphone, Server } from "lucide-react";
 
 export default async function Page() {
@@ -520,113 +522,9 @@ export default async function Page() {
         </div>
       </section>
 
-      {/* PROJECTS (Cream) */}
-      <section
-        id="projects"
-        className="order-3 min-h-screen flex items-center bg-gradient-to-b from-white to-[#F6F1E6]"
-      >
-        <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 w-full py-16">
-          <div className="text-center">
-            <h2 className="font-orbitron text-3xl sm:text-4xl font-bold">
-              Projects
-            </h2>
-            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-primary" />
-            <p className="mt-4 text-muted">
-              Selected projects across cybersecurity and development.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((p: any) => (
-              <article
-                key={p.slug}
-                className="group rounded-lg border border-black/10 bg-white/70 backdrop-blur overflow-hidden shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="h-36 overflow-hidden border-b border-black/10 relative bg-black">
-                  <img
-                    src="/project-card-cover.png"
-                    alt=""
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-transparent" />
-                  <div className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100 bg-primary/10" />
-                  <div className="absolute bottom-4 left-6">
-                    <p className="font-orbitron text-xs tracking-[0.25em] text-primary">
-                      PROJECT
-                    </p>
-                  </div>
-                </div>
-
-                <div className="p-8">
-                  <h3 className="font-orbitron text-lg font-bold">{p.title}</h3>
-
-                  <p className="mt-3 text-muted leading-relaxed">
-                    {p.shortDescription ?? p.description}
-                  </p>
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {p.tags?.map((t: string) => (
-                      <span
-                        key={t}
-                        className="rounded-full bg-[#F6F1E6] border border-black/10 px-3 py-1 text-xs text-muted"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    {/* NEW: Details button */}
-                    <SolidButton
-                      href={`/projects/${p.slug}`}
-                      className="px-4 py-2 font-semibold hover:-translate-y-0.5 hover:shadow-xl"
-                    >
-                      Details
-                      <ArrowRight size={16} aria-hidden="true" />
-                    </SolidButton>
-
-                    {p.links?.repo && p.links.repo !== "#" && (
-                      <OutlineButton
-                        href={p.links.repo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="px-4 py-2 font-semibold hover:-translate-y-0.5 hover:shadow-lg"
-                      >
-                        Repo
-                        <Github size={16} aria-hidden="true" />
-                      </OutlineButton>
-                    )}
-
-                    {p.links?.demo && p.links.demo !== "#" && (
-                      <OutlineButton
-                        href={p.links.demo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="px-4 py-2 font-semibold hover:-translate-y-0.5 hover:shadow-lg"
-                      >
-                        Demo
-                        <ExternalLink size={16} aria-hidden="true" />
-                      </OutlineButton>
-                    )}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <OutlineButton
-              href="https://github.com/tnsema"
-              target="_blank"
-              rel="noreferrer"
-              className="px-6 py-3 hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              View more on GitHub
-              <Github size={17} aria-hidden="true" />
-            </OutlineButton>
-          </div>
-        </div>
-      </section>
+      <Suspense fallback={<div className="order-3 min-h-screen bg-gradient-to-b from-white to-[#F6F1E6]" />}>
+        <ProjectsSection projects={projects} />
+      </Suspense>
 
       {/* CERTIFICATIONS (White) */}
       <section

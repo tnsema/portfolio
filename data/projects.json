@@ -2,6 +2,7 @@
 
   {
   "id": "awayclock",
+  "types": ["Software", "Cloud", "Cyber"],
   "title": "AwayClock",
   "tagline": "An offline-first employee attendance platform that captures credible worksite presence evidence for remote rail, mining and field operations.",
   "status": "Completed",
@@ -154,6 +155,7 @@
 
   {
     "id": "password-strength-analyzer",
+    "types": ["Software", "Cyber"],
     "title": "Password Strength Analyzer",
     "tagline": "A browser-based tool that evaluates password strength using practical security rules and gives clear improvement guidance.",
     "status": "Completed",
@@ -171,6 +173,7 @@
   },
   {
     "id": "secure-aws-linux-web-server",
+    "types": ["Cloud", "Cyber"],
     "title": "Secure AWS Linux Web Server",
     "tagline": "A hardened AWS EC2 Linux web server deployment focused on secure access, encrypted storage, service resilience, troubleshooting, and operational recovery.",
     "status": "Completed",
@@ -187,7 +190,7 @@
     "takeaways": { "learnings": ["Provisioned and administered an Ubuntu Linux workload on Amazon EC2.", "Applied Security Group rules based on the different trust requirements of public HTTP and administrative SSH traffic.", "Strengthened SSH security using key-based authentication, restricted network access, and local private-key permissions.", "Used systemd to inspect, restart, and persist Linux services.", "Used Nginx access and error logs as part of operational troubleshooting.", "Learned to distinguish service failures from network-layer failures using curl, systemctl, browser behaviour, and Security Group inspection.", "Validated service recovery and persistence instead of assuming the configuration worked.", "Documented an operational recovery procedure that can be followed during an outage."], "futureRoadmap": ["Add HTTPS using TLS instead of serving the public page over HTTP only.", "Add Amazon CloudWatch monitoring, metrics, and alarms.", "Automate infrastructure provisioning using Terraform.", "Introduce configuration automation instead of manually provisioning Nginx.", "Add CI/CD for controlled deployment of web content.", "Evaluate AWS Systems Manager Session Manager as an alternative to exposing SSH access.", "Extend the project with centralized logging and automated incident alerts."] }
   },
   {
-    "id": "aws-serverless-contact-event-logger", "title": "AWS Serverless Contact Event Logger", "tagline": "A serverless AWS application that receives, validates, and processes JSON requests through an HTTPS Lambda Function URL.", "status": "Completed", "featured": false,
+    "id": "aws-serverless-contact-event-logger", "types": ["Software", "Cloud", "Cyber"], "title": "AWS Serverless Contact Event Logger", "tagline": "A serverless AWS application that receives, validates, and processes JSON requests through an HTTPS Lambda Function URL.", "status": "Completed", "featured": false,
     "links": { "liveDemo": "https://cloud.thosem.com/projects/aws-serverless-contact-event-logger", "githubRepo": null, "youtubeDemo": "https://youtu.be/n2CuB0v-h3M", "architectureDiagram": null },
     "technologies": [{ "name": "AWS Lambda", "category": "Cloud" }, { "name": "Python", "category": "Programming Language" }, { "name": "Amazon CloudWatch", "category": "Monitoring" }, { "name": "AWS IAM", "category": "Security" }, { "name": "Postman", "category": "API Testing" }],
     "problemStatement": { "context": "The application receives JSON requests through an HTTPS endpoint.", "painPoint": "Request handling needs validation, monitoring, and testing.", "solution": "Built a Lambda-based application using a Function URL, IAM execution permissions, CloudWatch Logs, and Postman testing." },
@@ -197,7 +200,7 @@
     "takeaways": { "learnings": ["Built and tested a serverless request-processing application using AWS Lambda and Python.", "Used CloudWatch Logs for monitoring and troubleshooting."], "futureRoadmap": [] }
   },
   {
-    "id": "aws-static-website-hosting", "title": "Static Website Hosted on AWS S3", "tagline": "A static website deployed using AWS S3 static website hosting.", "status": "Completed", "featured": false,
+    "id": "aws-static-website-hosting", "types": ["Cloud", "Cyber"], "title": "Static Website Hosted on AWS S3", "tagline": "A static website deployed using AWS S3 static website hosting.", "status": "Completed", "featured": false,
     "links": { "liveDemo": "https://cloud.thosem.com/projects/aws-s3-static-website", "githubRepo": null, "youtubeDemo": null, "architectureDiagram": null },
     "technologies": [{ "name": "Amazon S3", "category": "Storage & Hosting" }, { "name": "Amazon CloudFront", "category": "Content Delivery" }, { "name": "AWS IAM", "category": "Security" }, { "name": "Amazon Route 53", "category": "DNS" }],
     "problemStatement": { "context": "A static website needs secure delivery and a custom-domain configuration.", "painPoint": "Website hosting requires content delivery, DNS configuration, access permissions, and ongoing maintenance.", "solution": "Deployed the website on Amazon S3, delivered it through CloudFront, configured HTTPS and Route 53 DNS integration, and applied least-privilege IAM permissions." },
@@ -207,7 +210,7 @@
     "takeaways": { "learnings": ["Deployed and maintained a static website using Amazon S3, CloudFront, IAM, and Route 53."], "futureRoadmap": [] }
   },
   {
-    "id": "cloud-portfolio-deployment", "title": "Cloud Portfolio Deployment", "tagline": "A version-controlled portfolio website deployed with Cloudflare Pages, GitHub, and custom-domain DNS.", "status": "Completed", "featured": false,
+    "id": "cloud-portfolio-deployment", "types": ["Software", "Cloud"], "title": "Cloud Portfolio Deployment", "tagline": "A version-controlled portfolio website deployed with Cloudflare Pages, GitHub, and custom-domain DNS.", "status": "Completed", "featured": false,
     "links": { "liveDemo": null, "githubRepo": null, "youtubeDemo": null, "architectureDiagram": null },
     "technologies": [{ "name": "Cloudflare Pages", "category": "Hosting" }, { "name": "GitHub", "category": "Version Control" }, { "name": "DNS", "category": "Networking" }],
     "problemStatement": { "context": "A portfolio website requires a reliable deployment path and custom-domain access.", "painPoint": "Deployment and accessibility issues can prevent a portfolio from being available as intended.", "solution": "Deployed a version-controlled portfolio through GitHub and Cloudflare Pages, configured a custom domain and DNS records, and resolved deployment and accessibility issues." },
@@ -217,7 +220,7 @@
     "takeaways": { "learnings": ["Deployed a version-controlled website using Cloudflare Pages, GitHub, and DNS."], "futureRoadmap": [] }
   },
   {
-    "id": "infrastructure-hosting-administration", "title": "Infrastructure & Hosting Administration", "tagline": "Hands-on administration of Linux and cPanel hosting environments for websites and business applications.", "status": "Completed", "featured": false,
+    "id": "infrastructure-hosting-administration", "types": ["Cloud", "Cyber"], "title": "Infrastructure & Hosting Administration", "tagline": "Hands-on administration of Linux and cPanel hosting environments for websites and business applications.", "status": "Completed", "featured": false,
     "links": { "liveDemo": null, "githubRepo": null, "youtubeDemo": null, "architectureDiagram": null },
     "technologies": [{ "name": "Linux", "category": "Operating System" }, { "name": "cPanel", "category": "Hosting Administration" }, { "name": "DNS", "category": "Networking" }, { "name": "Email Hosting", "category": "Messaging" }],
     "problemStatement": { "context": "Websites and business applications require ongoing hosting administration and operational support.", "painPoint": "Domains, DNS, email services, user accounts, deployments, and availability issues need coordinated administration.", "solution": "Administered hosting environments and handled domains, DNS records, email services, user accounts, deployments, and operational troubleshooting." },
@@ -226,7 +229,7 @@
     "securityDecisions": [], "technicalChallenges": [], "resilienceTesting": [], "visuals": [], "takeaways": { "learnings": ["Administered Linux and cPanel hosting environments and supported associated domain, DNS, email, and deployment operations."], "futureRoadmap": [] }
   },
   {
-    "id": "mmamoriri-salon-management-system", "title": "MmaMoriri - Salon Management System", "tagline": "An appointment-booking and salon-management application with customer, service, administrative, and reporting functionality.", "status": "Completed", "featured": false,
+    "id": "mmamoriri-salon-management-system", "types": ["Software"], "title": "MmaMoriri - Salon Management System", "tagline": "An appointment-booking and salon-management application with customer, service, administrative, and reporting functionality.", "status": "Completed", "featured": false,
     "links": { "liveDemo": null, "githubRepo": null, "youtubeDemo": null, "architectureDiagram": null },
     "technologies": [{ "name": "Spring Boot", "category": "Backend" }, { "name": "JSP", "category": "Frontend" }, { "name": "PostgreSQL", "category": "Database" }, { "name": "MVC", "category": "Architecture" }],
     "problemStatement": { "context": "A salon needs a system for appointments, services, customer information, administration, and reporting.", "painPoint": "Managing bookings and business activity requires organized application and database functionality.", "solution": "Developed a Spring Boot and JSP application with customer, service, administrative, appointment-booking, and reporting features backed by PostgreSQL." },
@@ -235,7 +238,7 @@
     "securityDecisions": [], "technicalChallenges": [], "resilienceTesting": [], "visuals": [], "takeaways": { "learnings": ["Designed a PostgreSQL database and applied an MVC architecture to a Spring Boot and JSP application."], "futureRoadmap": [] }
   },
   {
-    "id": "buildup-service-provider-marketplace", "title": "BuildUp - Service Provider Marketplace", "tagline": "A marketplace that connects customers with service providers through profiles, listings, requests, search, and filtering.", "status": "Completed", "featured": false,
+    "id": "buildup-service-provider-marketplace", "types": ["Software"], "title": "BuildUp - Service Provider Marketplace", "tagline": "A marketplace that connects customers with service providers through profiles, listings, requests, search, and filtering.", "status": "Completed", "featured": false,
     "links": { "liveDemo": null, "githubRepo": null, "youtubeDemo": null, "architectureDiagram": null },
     "technologies": [{ "name": "Spring Boot", "category": "Backend" }, { "name": "React", "category": "Frontend" }, { "name": "MongoDB", "category": "Database" }, { "name": "REST APIs", "category": "API" }],
     "problemStatement": { "context": "Customers and service providers need a platform for discovery and service requests.", "painPoint": "Connecting customers with relevant providers requires profiles, listings, search, and filtering.", "solution": "Built a Spring Boot, React, and MongoDB platform with profiles, service listings, requests, search, filtering, REST APIs, and user dashboards." },
@@ -244,7 +247,7 @@
     "securityDecisions": [], "technicalChallenges": [], "resilienceTesting": [], "visuals": [], "takeaways": { "learnings": ["Built a full-stack marketplace using Spring Boot, React, MongoDB, and REST APIs."], "futureRoadmap": [] }
   },
   {
-    "id": "smart-campus-campus-management-platform", "title": "Smart Campus - Campus Management Platform", "tagline": "A centralized campus platform for issue reporting, timetable management, and classroom booking.", "status": "Completed", "featured": false,
+    "id": "smart-campus-campus-management-platform", "types": ["Software"], "title": "Smart Campus - Campus Management Platform", "tagline": "A centralized campus platform for issue reporting, timetable management, and classroom booking.", "status": "Completed", "featured": false,
     "links": { "liveDemo": null, "githubRepo": null, "youtubeDemo": null, "architectureDiagram": null },
     "technologies": [{ "name": "Node.js", "category": "Backend" }, { "name": "Express.js", "category": "Backend" }, { "name": "React", "category": "Frontend" }, { "name": "MongoDB", "category": "Database" }, { "name": "REST APIs", "category": "API" }],
     "problemStatement": { "context": "Campus users need a centralized platform for reporting issues, managing timetables, and booking classrooms.", "painPoint": "These activities can be difficult to coordinate when they are not supported by a unified system.", "solution": "Developed a Node.js, Express.js, React, and MongoDB platform with issue-reporting, timetable-management, classroom-booking, and REST API functionality." },
@@ -253,7 +256,7 @@
     "securityDecisions": [], "technicalChallenges": [], "resilienceTesting": [], "visuals": [], "takeaways": { "learnings": ["Developed REST APIs with Node.js and Express.js and integrated them with a React frontend and MongoDB."], "futureRoadmap": [] }
   },
   {
-    "id": "beauno-resort-s3-cloudfront", "title": "Beauno Resort Website Hosted on AWS S3 and CloudFront", "tagline": "A luxury resort static website deployed using Amazon S3 static hosting and CloudFront HTTPS delivery.", "status": "Completed", "featured": false,
+    "id": "beauno-resort-s3-cloudfront", "types": ["Software", "Cloud", "Cyber"], "title": "Beauno Resort Website Hosted on AWS S3 and CloudFront", "tagline": "A luxury resort static website deployed using Amazon S3 static hosting and CloudFront HTTPS delivery.", "status": "Completed", "featured": false,
     "links": { "liveDemo": "https://d2nuu2lclhuan1.cloudfront.net/", "githubRepo": null, "youtubeDemo": null, "architectureDiagram": "https://cloud.thosem.com/projects/beauno-resort-s3-cloudfront" },
     "technologies": [{ "name": "Amazon S3", "category": "Storage & Hosting" }, { "name": "Amazon CloudFront", "category": "Content Delivery" }, { "name": "AWS IAM", "category": "Security" }],
     "problemStatement": { "context": "A resort website needs reliable static hosting with secure public delivery.", "painPoint": "The site needs a scalable hosting setup that can deliver content over HTTPS.", "solution": "Deployed the website to Amazon S3 and used CloudFront to provide HTTPS content delivery." },
