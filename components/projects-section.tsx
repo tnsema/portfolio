@@ -68,7 +68,20 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                 <div className="absolute bottom-4 left-6"><p className="font-orbitron text-xs tracking-[0.25em] text-primary">PROJECT</p></div>
               </div>
               <div className="p-8">
-                {p.types?.length ? <div className="mb-3 flex flex-wrap gap-2">{p.types.map((type) => <span key={type} className="rounded-full bg-primary/15 px-2.5 py-1 text-[11px] font-semibold text-black">{type}</span>)}</div> : null}
+                {p.types?.length ? (
+                  <div className="mb-3 flex flex-wrap gap-2" aria-label={`${p.title} project types`}>
+                    {p.types.map((type) => (
+                      <button
+                        key={type}
+                        type="button"
+                        onClick={() => selectType(type as (typeof filters)[number])}
+                        className="rounded-full bg-primary/15 px-2.5 py-1 text-[11px] font-semibold text-black transition hover:bg-primary hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                      >
+                        {type}
+                      </button>
+                    ))}
+                  </div>
+                ) : null}
                 <h3 className="font-orbitron text-lg font-bold">{p.title}</h3>
                 <p className="mt-3 leading-relaxed text-muted">{p.shortDescription ?? p.description}</p>
                 <div className="mt-5 flex flex-wrap gap-2">{p.tags?.map((tag) => <span key={tag} className="rounded-full border border-black/10 bg-[#F6F1E6] px-3 py-1 text-xs text-muted">{tag}</span>)}</div>

@@ -37,9 +37,9 @@ export default function PublicLayout({
         key: "projects",
         title: "Projects",
         items: [
-          { label: "Web Development", href: "#projects" },
-          { label: "Cybersecurity", href: "#projects" },
-          { label: "Networking", href: "#projects" },
+          { label: "Software", href: "/?type=software#projects" },
+          { label: "Cloud", href: "/?type=cloud#projects" },
+          { label: "Cyber", href: "/?type=cyber#projects" },
         ],
       },
     ],
