@@ -8,7 +8,15 @@ import {
 import { OutlineButton, SolidButton } from "@/components/ui/buttons";
 import { ProjectsSection } from "@/components/projects-section";
 import { Suspense } from "react";
+import { pageMetadata } from "@/lib/seo";
 import { ArrowRight, Award, Briefcase, Cloud, Code2, Database, ExternalLink, FolderKanban, GitBranch, Github, Linkedin, Mail, MonitorSmartphone, Server } from "lucide-react";
+
+export const metadata = pageMetadata({
+  title: "Software, Cloud & Cybersecurity Portfolio",
+  description: "Explore Thobile Sema's software engineering, cloud computing, cybersecurity, qualifications, certifications, and professional experience.",
+  path: "/",
+  keywords: ["software projects", "cloud projects", "cybersecurity projects", "IT portfolio"],
+});
 
 export default async function Page() {
   const projects = await getProjects();
@@ -127,11 +135,11 @@ export default async function Page() {
               <img
                 src="/b&w.jpg"
                 alt=""
-                className="pointer-events-none absolute right-[-6%] top-1/2 -translate-y-1/2 w-[560px] max-w-none grayscale opacity-45 hero-photo"
+                className="pointer-events-none absolute right-[-6%] top-[46%] -translate-y-1/2 w-[560px] max-w-none grayscale opacity-45 hero-photo"
               />
 
               {/* Dark core over a masked image; transparent edges reveal the hero. */}
-              <div className="pointer-events-none absolute right-[-6%] top-1/2 h-[562px] w-[560px] max-w-none -translate-y-1/2 hero-photo bg-[radial-gradient(circle_at_center,rgba(73,48,20,0.15)_0%,rgba(73,48,20,0.05)_35%,transparent_72%)]" />
+              <div className="pointer-events-none absolute right-[-6%] top-[46%] h-[562px] w-[560px] max-w-none -translate-y-1/2 hero-photo bg-[radial-gradient(circle_at_center,rgba(73,48,20,0.15)_0%,rgba(73,48,20,0.05)_35%,transparent_72%)]" />
             </div>
           </div>
         </div>

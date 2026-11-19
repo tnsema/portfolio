@@ -1,6 +1,14 @@
 import { getCertificates } from "@/api/api";
 import { OutlineButton, SolidButton } from "@/components/ui/buttons";
 import { ExternalLink, Mail } from "lucide-react";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Certifications & Credentials",
+  description: "View Thobile Sema's professional certifications and active cybersecurity study credentials.",
+  path: "/certificates/",
+  keywords: ["cybersecurity certifications", "IT certifications", "professional credentials"],
+});
 
 function formatDate(input: string | null) {
   if (/^\d{4}$/.test(input ?? "")) return input;

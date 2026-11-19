@@ -1,11 +1,31 @@
 import { getProjects, getProjectBySlug } from "@/api/api";
 import { ExternalLink, Layers3 } from "lucide-react";
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const projects = await getProjects();
   return projects.map((project: any) => ({ slug: project.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const project: any = await getProjectBySlug(slug);
+  if (!project) {
+    return pageMetadata({ title: "Project Not Found", description: "The requested portfolio project could not be found.", path: `/projects/${slug}/`, keywords: ["portfolio project"] });
+  }
+  const technologies = project.technologies?.map((technology: any) => technology.name) ?? [];
+  const cover = project.visuals?.find((visual: any) => visual.type === "image" && visual.url)?.url;
+  return pageMetadata({
+    title: project.title,
+    description: project.tagline,
+    path: `/projects/${project.slug}/`,
+    keywords: ["project case study", ...technologies],
+    image: cover || "/project-card-cover.png",
+    type: "article",
+  });
 }
 
 function SectionHeading({ children }: { children: React.ReactNode }) {

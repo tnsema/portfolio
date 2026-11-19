@@ -1,5 +1,15 @@
 import { ArrowRight, Home } from "lucide-react";
 import { OutlineButton, SolidButton } from "@/components/ui/buttons";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Page Not Found",
+  description: "The requested page could not be found on Thobile Sema's portfolio.",
+  path: "/404/",
+  keywords: ["404", "portfolio"],
+  image: "/project-card-cover.png",
+  noIndex: true,
+});
 
 export default function NotFound() {
   return (
